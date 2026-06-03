@@ -21,7 +21,7 @@ document.querySelectorAll(".lead-form").forEach((form) => {
     const nome = String(data.get("nome") || "").trim();
     const telefone = String(data.get("telefone") || "").trim();
     const doctor = form.dataset.doctor || "Dr. Thiago Cerqueira";
-    const phone = form.dataset.phone || "5561982775566";
+    const phone = form.dataset.phone || "5561996079061";
     const message = encodeURIComponent(`Olá, gostaria de agendar uma avaliação com ${doctor}.\n\nNome: ${nome}\nTelefone: ${telefone}`);
 
     window.dataLayer = window.dataLayer || [];
