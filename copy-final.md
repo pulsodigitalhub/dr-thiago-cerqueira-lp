@@ -149,13 +149,17 @@ O que pacientes relatam sobre o atendimento
 
 ### Apoio
 
-Avaliacao verificada em plataforma publica, usada de forma resumida e sem promessa de resultado.
+Relatos de pacientes sobre a experiencia de cuidado com o Dr. Thiago Cerqueira.
 
-### Depoimento
+### Depoimentos
 
-Thiago L. - "Excelente medico! Com atencao aos detalhes, cordialidade e bastante conhecimento."
+Cesar - "Tenho uma hernia na lombar e tambem um desvio na cervical. Com o tratamento do Dr. Thiago, nao senti mais as dores intensas que sentia. Para mim, tem sido a solucao, e sigo com o tratamento."
 
-Paciente verificado - Doctoralia
+Gilvanir - "Sera um prazer escrever sobre o quanto o Dr. Thiago e maravilhoso! Um profissional de excelencia e comprometido. Vou registrar sim, com todo prazer!"
+
+Maria da Conceicao - "Quando procurei o Dr. Thiago Cerqueira, ja estava ha uns oito meses com problema no pulso, saindo de um tratamento em outra clinica e sem resultados. Tinha dores constantes, inchaco e outros incomodos. Atraves da consulta, descobri complicacoes que vinham se acumulando no punho. Gracas a sua atencao e interesse, comecei um tratamento e, depois de pouco tempo, ja posso dizer que estou muito bem e nao sinto mais nenhuma dor."
+
+Maria Eduarda - "Excelente profissional; rico em conhecimento e extremamente humano e perito!"
 
 ### Nota de seguranca
 

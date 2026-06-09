@@ -734,13 +734,12 @@ h3 {
 
 .testimonials-grid {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 320px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 18px;
   align-items: stretch;
 }
 
-.testimonial-card,
-.testimonial-summary {
+.testimonial-card {
   border: 1px solid rgba(83, 104, 106, 0.16);
   border-radius: var(--radius);
   background: var(--white);
@@ -751,19 +750,18 @@ h3 {
   padding: 30px;
 }
 
-.stars {
-  color: var(--icon-gold);
-  font-size: 1.25rem;
-  letter-spacing: 0.08em;
+.testimonial-card.featured {
+  grid-column: span 2;
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.98), rgba(246, 247, 245, 0.96));
 }
 
 .testimonial-card blockquote {
-  max-width: 720px;
-  margin: 18px 0 20px;
+  margin: 0 0 20px;
   color: var(--ink);
-  font-size: clamp(1.45rem, 2.4vw, 2.2rem);
+  font-size: clamp(1.1rem, 1.45vw, 1.45rem);
   font-weight: 820;
-  line-height: 1.12;
+  line-height: 1.28;
 }
 
 .testimonial-card p {
@@ -778,29 +776,11 @@ h3 {
   font-size: 0.92rem;
 }
 
-.testimonial-summary {
-  display: grid;
-  align-content: center;
-  gap: 10px;
-  padding: 28px;
-  color: var(--white);
-  background:
-    linear-gradient(135deg, rgba(38, 47, 49, 0.96), rgba(83, 104, 106, 0.92));
-}
-
-.testimonial-summary strong {
-  color: var(--white);
-  font-size: 3.6rem;
-  line-height: 1;
-}
-
-.testimonial-summary span {
-  color: rgba(255, 255, 255, 0.88);
-  font-weight: 780;
-}
-
-.testimonial-summary small {
-  color: rgba(255, 255, 255, 0.66);
+.testimonial-note {
+  margin-top: 18px;
+  color: var(--muted);
+  font-size: 0.88rem;
+  text-align: center;
 }
 
 .faq-list {
@@ -1214,5 +1194,9 @@ h3 {
   .lead-form .btn {
     width: 100%;
     min-height: 54px;
+  }
+
+  .testimonial-card.featured {
+    grid-column: auto;
   }
 }
