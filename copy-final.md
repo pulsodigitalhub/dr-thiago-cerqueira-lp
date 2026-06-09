@@ -141,6 +141,26 @@ Segunda a sexta, 08:00-18:00
 Falar pelo WhatsApp  
 Abrir rota
 
+## Depoimentos
+
+### Titulo
+
+O que pacientes relatam sobre o atendimento
+
+### Apoio
+
+Avaliacao verificada em plataforma publica, usada de forma resumida e sem promessa de resultado.
+
+### Depoimento
+
+Thiago L. - "Excelente medico! Com atencao aos detalhes, cordialidade e bastante conhecimento."
+
+Paciente verificado - Doctoralia
+
+### Nota de seguranca
+
+Depoimentos representam experiencias individuais. Resultados podem variar conforme cada caso clinico.
+
 ## FAQ
 
 ### Preciso ja saber qual procedimento quero fazer?

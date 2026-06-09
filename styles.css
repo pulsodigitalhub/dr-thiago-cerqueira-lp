@@ -728,6 +728,81 @@ h3 {
   font-size: 0.85rem;
 }
 
+.testimonials {
+  background: #ecefed;
+}
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 320px;
+  gap: 18px;
+  align-items: stretch;
+}
+
+.testimonial-card,
+.testimonial-summary {
+  border: 1px solid rgba(83, 104, 106, 0.16);
+  border-radius: var(--radius);
+  background: var(--white);
+  box-shadow: var(--shadow);
+}
+
+.testimonial-card {
+  padding: 30px;
+}
+
+.stars {
+  color: var(--icon-gold);
+  font-size: 1.25rem;
+  letter-spacing: 0.08em;
+}
+
+.testimonial-card blockquote {
+  max-width: 720px;
+  margin: 18px 0 20px;
+  color: var(--ink);
+  font-size: clamp(1.45rem, 2.4vw, 2.2rem);
+  font-weight: 820;
+  line-height: 1.12;
+}
+
+.testimonial-card p {
+  margin: 0;
+  font-weight: 820;
+}
+
+.testimonial-card span {
+  display: block;
+  margin-top: 4px;
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+.testimonial-summary {
+  display: grid;
+  align-content: center;
+  gap: 10px;
+  padding: 28px;
+  color: var(--white);
+  background:
+    linear-gradient(135deg, rgba(38, 47, 49, 0.96), rgba(83, 104, 106, 0.92));
+}
+
+.testimonial-summary strong {
+  color: var(--white);
+  font-size: 3.6rem;
+  line-height: 1;
+}
+
+.testimonial-summary span {
+  color: rgba(255, 255, 255, 0.88);
+  font-weight: 780;
+}
+
+.testimonial-summary small {
+  color: rgba(255, 255, 255, 0.66);
+}
+
 .faq-list {
   display: grid;
   gap: 10px;
@@ -895,6 +970,7 @@ h3 {
   .two-column,
   .faq-grid,
   .location-grid,
+  .testimonials-grid,
   .final-grid,
   .treatment-layout,
   .about-grid {
