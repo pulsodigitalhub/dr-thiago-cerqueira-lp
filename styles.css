@@ -872,13 +872,6 @@ h3 {
   background: var(--teal);
 }
 
-.testimonial-note {
-  margin-top: 18px;
-  color: var(--muted);
-  font-size: 0.88rem;
-  text-align: center;
-}
-
 .faq-list {
   display: grid;
   gap: 10px;
