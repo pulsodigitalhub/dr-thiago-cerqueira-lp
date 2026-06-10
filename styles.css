@@ -732,35 +732,6 @@ h3 {
   background: #ecefed;
 }
 
-.testimonial-proof {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 14px;
-  margin-bottom: 26px;
-}
-
-.testimonial-proof div {
-  padding: 18px;
-  border: 1px solid rgba(83, 104, 106, 0.14);
-  border-radius: 8px;
-  background: rgba(255, 255, 255, 0.72);
-  box-shadow: 0 18px 44px rgba(48, 50, 53, 0.08);
-}
-
-.testimonial-proof strong {
-  display: block;
-  margin-bottom: 7px;
-  color: var(--ink);
-  font-size: 0.96rem;
-}
-
-.testimonial-proof span {
-  display: block;
-  color: var(--muted);
-  font-size: 0.92rem;
-  line-height: 1.45;
-}
-
 .testimonial-carousel {
   position: relative;
   display: grid;
@@ -1288,10 +1259,6 @@ h3 {
   .testimonial-carousel {
     grid-template-columns: 1fr 1fr;
     gap: 12px;
-  }
-
-  .testimonial-proof {
-    grid-template-columns: 1fr;
   }
 
   .testimonial-track {
