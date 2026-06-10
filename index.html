@@ -10,7 +10,7 @@
     <meta property="og:type" content="website">
     <meta property="og:image" content="assets/dr-thiago-hero.avif">
     <link rel="preconnect" href="https://unpkg.com">
-    <link rel="stylesheet" href="styles.css?v=20260610-6">
+    <link rel="stylesheet" href="styles.css?v=20260610-7">
   </head>
   <body>
     <svg class="icon-sprite" aria-hidden="true">
@@ -431,13 +431,17 @@
             </div>
           </div>
           <form class="lead-form" data-phone="5561996079061" data-doctor="Dr. Thiago Cerqueira" aria-label="Formulário de agendamento">
+            <div class="form-heading">
+              <strong>Preencha para falar pelo WhatsApp</strong>
+              <span>Informe nome e telefone. Ao enviar, a mensagem já abre pronta para a equipe.</span>
+            </div>
             <label>
               <span>Nome</span>
               <input type="text" name="nome" autocomplete="name" placeholder="Seu nome" required>
             </label>
             <label>
               <span>Telefone</span>
-              <input type="tel" name="telefone" autocomplete="tel" inputmode="tel" placeholder="(61) 99999-9999" required>
+              <input type="tel" name="telefone" autocomplete="tel" inputmode="tel" placeholder="(61) 99999-9999" maxlength="15" pattern="\([0-9]{2}\) [0-9]{5}-[0-9]{4}" data-phone-mask required>
             </label>
             <button class="btn btn-primary" type="submit">
               <i data-lucide="send" aria-hidden="true"></i>
@@ -456,6 +460,6 @@
     </footer>
 
     <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
-    <script src="script.js?v=20260610-1"></script>
+    <script src="script.js?v=20260610-2"></script>
   </body>
 </html>

@@ -54,6 +54,23 @@ document.querySelectorAll("[data-carousel]").forEach((carousel) => {
   show(active);
 });
 
+function formatPhone(value) {
+  const digits = value.replace(/\D/g, "").slice(0, 11);
+  if (digits.length <= 2) return digits;
+  if (digits.length <= 7) return `(${digits.slice(0, 2)}) ${digits.slice(2)}`;
+  return `(${digits.slice(0, 2)}) ${digits.slice(2, 7)}-${digits.slice(7)}`;
+}
+
+document.querySelectorAll("[data-phone-mask]").forEach((input) => {
+  input.addEventListener("input", () => {
+    input.value = formatPhone(input.value);
+  });
+
+  input.addEventListener("blur", () => {
+    input.value = formatPhone(input.value);
+  });
+});
+
 document.querySelectorAll(".lead-form").forEach((form) => {
   form.addEventListener("submit", (event) => {
     event.preventDefault();
@@ -62,6 +79,14 @@ document.querySelectorAll(".lead-form").forEach((form) => {
     const data = new FormData(form);
     const nome = String(data.get("nome") || "").trim();
     const telefone = String(data.get("telefone") || "").trim();
+    const telefoneDigits = telefone.replace(/\D/g, "");
+    if (telefoneDigits.length !== 11) {
+      const phoneInput = form.querySelector("[data-phone-mask]");
+      phoneInput?.setCustomValidity("Informe o telefone com DDD e 9 dígitos.");
+      phoneInput?.reportValidity();
+      phoneInput?.setCustomValidity("");
+      return;
+    }
     const doctor = form.dataset.doctor || "Dr. Thiago Cerqueira";
     const phone = form.dataset.phone || "5561996079061";
     const message = encodeURIComponent(`Olá, gostaria de agendar uma avaliação com ${doctor}.\n\nNome: ${nome}\nTelefone: ${telefone}`);
