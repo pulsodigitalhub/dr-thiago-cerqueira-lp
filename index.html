@@ -10,7 +10,7 @@
     <meta property="og:type" content="website">
     <meta property="og:image" content="assets/dr-thiago-hero.avif">
     <link rel="preconnect" href="https://unpkg.com">
-    <link rel="stylesheet" href="styles.css?v=20260609-2">
+    <link rel="stylesheet" href="styles.css?v=20260610-2">
   </head>
   <body>
     <svg class="icon-sprite" aria-hidden="true">
@@ -343,23 +343,32 @@
           <h2>O que pacientes relatam sobre o atendimento</h2>
           <p>Relatos de pacientes sobre a experiência de cuidado com o Dr. Thiago Cerqueira.</p>
         </div>
-        <div class="container testimonials-grid">
-          <article class="testimonial-card">
-            <blockquote>“Tenho uma hérnia na lombar e também um desvio na cervical. Com o tratamento do Dr. Thiago, não senti mais as dores intensas que sentia. Para mim, tem sido a solução, e sigo com o tratamento.”</blockquote>
-            <p>Cesar</p>
-          </article>
-          <article class="testimonial-card">
-            <blockquote>“Será um prazer escrever sobre o quanto o Dr. Thiago é maravilhoso! Um profissional de excelência e comprometido. Vou registrar sim, com todo prazer!”</blockquote>
-            <p>Gilvanir</p>
-          </article>
-          <article class="testimonial-card featured">
-            <blockquote>“Quando procurei o Dr. Thiago Cerqueira, já estava há uns oito meses com problema no pulso, saindo de um tratamento em outra clínica e sem resultados. Tinha dores constantes, inchaço e outros incômodos. Através da consulta, descobri complicações que vinham se acumulando no punho. Graças à sua atenção e interesse, comecei um tratamento e, depois de pouco tempo, já posso dizer que estou muito bem e não sinto mais nenhuma dor.”</blockquote>
-            <p>Maria da Conceição</p>
-          </article>
-          <article class="testimonial-card">
-            <blockquote>“Excelente profissional; rico em conhecimento e extremamente humano e perito!”</blockquote>
-            <p>Maria Eduarda</p>
-          </article>
+        <div class="container testimonial-carousel" data-carousel aria-label="Depoimentos de pacientes">
+          <button class="carousel-btn carousel-prev" type="button" data-carousel-prev aria-label="Depoimento anterior">
+            <i data-lucide="chevron-left" aria-hidden="true"></i>
+          </button>
+          <div class="testimonial-track" data-carousel-track>
+            <article class="testimonial-card is-active" data-carousel-slide>
+              <blockquote>“Tenho uma hérnia na lombar e também um desvio na cervical. Com o tratamento do Dr. Thiago, não senti mais as dores intensas que sentia. Para mim, tem sido a solução, e sigo com o tratamento.”</blockquote>
+              <p>Cesar</p>
+            </article>
+            <article class="testimonial-card" data-carousel-slide>
+              <blockquote>“Será um prazer escrever sobre o quanto o Dr. Thiago é maravilhoso! Um profissional de excelência e comprometido. Vou registrar sim, com todo prazer!”</blockquote>
+              <p>Gilvanir</p>
+            </article>
+            <article class="testimonial-card" data-carousel-slide>
+              <blockquote>“Quando procurei o Dr. Thiago Cerqueira, já estava há uns oito meses com problema no pulso, saindo de um tratamento em outra clínica e sem resultados. Tinha dores constantes, inchaço e outros incômodos. Através da consulta, descobri complicações que vinham se acumulando no punho. Graças à sua atenção e interesse, comecei um tratamento e, depois de pouco tempo, já posso dizer que estou muito bem e não sinto mais nenhuma dor.”</blockquote>
+              <p>Maria da Conceição</p>
+            </article>
+            <article class="testimonial-card" data-carousel-slide>
+              <blockquote>“Excelente profissional; rico em conhecimento e extremamente humano e perito!”</blockquote>
+              <p>Maria Eduarda</p>
+            </article>
+          </div>
+          <button class="carousel-btn carousel-next" type="button" data-carousel-next aria-label="Próximo depoimento">
+            <i data-lucide="chevron-right" aria-hidden="true"></i>
+          </button>
+          <div class="carousel-dots" data-carousel-dots aria-label="Selecionar depoimento"></div>
         </div>
         <p class="container testimonial-note">Depoimentos representam experiências individuais. Resultados podem variar conforme cada caso clínico.</p>
       </section>
@@ -440,6 +449,6 @@
     </footer>
 
     <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
-    <script src="script.js?v=20260603-1"></script>
+    <script src="script.js?v=20260610-1"></script>
   </body>
 </html>
