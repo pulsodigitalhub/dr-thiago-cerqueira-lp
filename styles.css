@@ -732,6 +732,11 @@ h3 {
   background: #ecefed;
 }
 
+.testimonial-heading-copy {
+  max-width: none !important;
+  white-space: nowrap;
+}
+
 .testimonial-carousel {
   position: relative;
   display: grid;
@@ -1259,6 +1264,10 @@ h3 {
   .testimonial-carousel {
     grid-template-columns: 1fr 1fr;
     gap: 12px;
+  }
+
+  .testimonial-heading-copy {
+    white-space: normal;
   }
 
   .testimonial-track {
