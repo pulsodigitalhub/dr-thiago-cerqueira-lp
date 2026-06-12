@@ -921,6 +921,12 @@ h3 {
   align-items: center;
 }
 
+.final-grid-single {
+  max-width: 860px;
+  grid-template-columns: minmax(0, 1fr);
+  text-align: left;
+}
+
 .final-cta h2 {
   max-width: 780px;
 }
