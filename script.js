@@ -61,6 +61,51 @@ function formatPhone(value) {
   return `(${digits.slice(0, 2)}) ${digits.slice(2, 7)}-${digits.slice(7)}`;
 }
 
+const TRACKING_KEYS = [
+  "utm_source",
+  "utm_medium",
+  "utm_campaign",
+  "utm_term",
+  "utm_content",
+  "campaign_id",
+  "adset_name",
+  "adset_id",
+  "ad_id",
+  "placement",
+  "platform",
+  "gclid",
+  "fbclid",
+  "gbraid",
+  "wbraid",
+  "msclkid",
+  "ttclid",
+  "device",
+  "user_agent",
+  "page_url",
+  "referrer",
+  "pagina",
+  "fbp",
+  "fbc"
+];
+
+function getTrackingData() {
+  let tracking = {};
+
+  try {
+    if (typeof window.getTracking === "function") {
+      tracking = window.getTracking() || {};
+    }
+  } catch (_) {
+    tracking = {};
+  }
+
+  return TRACKING_KEYS.reduce((data, key) => {
+    const value = tracking[key];
+    data[key] = value === undefined || value === null ? "" : String(value);
+    return data;
+  }, {});
+}
+
 document.querySelectorAll("[data-phone-mask]").forEach((input) => {
   input.addEventListener("input", () => {
     input.value = formatPhone(input.value);
@@ -108,8 +153,11 @@ document.addEventListener("keydown", (event) => {
 });
 
 document.querySelectorAll(".lead-form").forEach((form) => {
-  form.addEventListener("submit", (event) => {
+  let isSubmitting = false;
+
+  form.addEventListener("submit", async (event) => {
     event.preventDefault();
+    if (isSubmitting) return;
     if (!form.reportValidity()) return;
 
     const data = new FormData(form);
@@ -127,7 +175,10 @@ document.querySelectorAll(".lead-form").forEach((form) => {
     const phone = form.dataset.phone || "5561996079061";
     const message = encodeURIComponent(`Olá, gostaria de agendar uma avaliação com ${doctor}.\n\nNome: ${nome}\nTelefone: ${telefone}`);
     const webhook = form.dataset.webhook || form.getAttribute("action");
+    const submitButton = form.querySelector('button[type="submit"]');
+    const originalButtonContent = submitButton?.innerHTML;
     const webhookData = new FormData(form);
+    const trackingData = getTrackingData();
     webhookData.set("nome", nome);
     webhookData.set("telefone", telefone);
     webhookData.set("telefone_digits", telefoneDigits);
@@ -135,20 +186,47 @@ document.querySelectorAll(".lead-form").forEach((form) => {
     webhookData.set("origem", window.location.href);
     webhookData.set("evento", "lead_form_submit");
     webhookData.set("timestamp", new Date().toISOString());
+    TRACKING_KEYS.forEach((key) => webhookData.set(key, trackingData[key]));
+
+    isSubmitting = true;
+    form.setAttribute("aria-busy", "true");
+    if (submitButton) {
+      submitButton.disabled = true;
+      submitButton.innerHTML = "Enviando...";
+    }
+
+    // Abre uma aba vazia durante o gesto do usuário para evitar bloqueio de popup
+    // enquanto o webhook recebe os dados.
+    const whatsAppWindow = window.open("", "_blank");
 
     window.dataLayer = window.dataLayer || [];
     window.dataLayer.push({ event: "lead_form_submit", form_name: "cta_agendamento_thiago" });
 
-    if (webhook) {
-      fetch(webhook, {
-        method: "POST",
-        mode: "no-cors",
-        body: webhookData
-      }).catch(() => {});
-    }
+    try {
+      if (webhook) {
+        await fetch(webhook, {
+          method: "POST",
+          mode: "no-cors",
+          body: webhookData
+        });
+      }
+    } catch (_) {
+      // O WhatsApp continua disponível mesmo quando o webhook estiver indisponível.
+    } finally {
+      if (whatsAppWindow) {
+        whatsAppWindow.location.href = `https://wa.me/${phone}?text=${message}`;
+      } else {
+        window.open(`https://wa.me/${phone}?text=${message}`, "_blank", "noopener");
+      }
 
-    window.open(`https://wa.me/${phone}?text=${message}`, "_blank", "noopener");
-    form.reset();
-    closeLeadModal();
+      form.reset();
+      closeLeadModal();
+      form.removeAttribute("aria-busy");
+      isSubmitting = false;
+      if (submitButton) {
+        submitButton.disabled = false;
+        submitButton.innerHTML = originalButtonContent;
+      }
+    }
   });
 });
