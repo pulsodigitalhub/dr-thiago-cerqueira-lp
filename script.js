@@ -126,16 +126,15 @@ document.querySelectorAll(".lead-form").forEach((form) => {
     const doctor = form.dataset.doctor || "Dr. Thiago Cerqueira";
     const phone = form.dataset.phone || "5561996079061";
     const message = encodeURIComponent(`Olá, gostaria de agendar uma avaliação com ${doctor}.\n\nNome: ${nome}\nTelefone: ${telefone}`);
-    const webhook = form.dataset.webhook;
-    const payload = {
-      nome,
-      telefone,
-      telefone_digits: telefoneDigits,
-      medico: doctor,
-      origem: window.location.href,
-      evento: "lead_form_submit",
-      timestamp: new Date().toISOString()
-    };
+    const webhook = form.dataset.webhook || form.getAttribute("action");
+    const webhookData = new FormData(form);
+    webhookData.set("nome", nome);
+    webhookData.set("telefone", telefone);
+    webhookData.set("telefone_digits", telefoneDigits);
+    webhookData.set("medico", doctor);
+    webhookData.set("origem", window.location.href);
+    webhookData.set("evento", "lead_form_submit");
+    webhookData.set("timestamp", new Date().toISOString());
 
     window.dataLayer = window.dataLayer || [];
     window.dataLayer.push({ event: "lead_form_submit", form_name: "cta_agendamento_thiago" });
@@ -144,8 +143,7 @@ document.querySelectorAll(".lead-form").forEach((form) => {
       fetch(webhook, {
         method: "POST",
         mode: "no-cors",
-        headers: { "Content-Type": "text/plain;charset=UTF-8" },
-        body: JSON.stringify(payload)
+        body: webhookData
       }).catch(() => {});
     }
 
