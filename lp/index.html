@@ -17,7 +17,7 @@
     <meta property="og:type" content="website">
     <meta property="og:image" content="../assets/dr-thiago-hero.avif">
     <link rel="preconnect" href="https://unpkg.com">
-    <link rel="stylesheet" href="../styles.css?v=20260610-7">
+    <link rel="stylesheet" href="../styles.css?v=20260618-1">
   </head>
   <body>
     <!-- Google Tag Manager (noscript) -->
@@ -122,7 +122,7 @@
         <a href="#como-funciona">Como funciona</a>
         <a href="#localizacao">Localização</a>
       </nav>
-      <a class="header-cta" href="#contato">
+      <a class="header-cta" href="#agendamento" data-open-lead-modal aria-controls="agendamento">
         <i data-lucide="calendar-check" aria-hidden="true"></i>
         Agendar
       </a>
@@ -198,7 +198,7 @@
           <span><svg class="custom-icon" aria-hidden="true"><use href="#icon-joint"></use></svg>Lesões e dor articular</span>
         </div>
         <div class="container section-cta">
-          <a class="btn btn-primary" href="#contato">
+          <a class="btn btn-primary" href="#agendamento" data-open-lead-modal aria-controls="agendamento">
             <i data-lucide="message-circle" aria-hidden="true"></i>
             Conversar com a equipe
           </a>
@@ -245,7 +245,7 @@
           <div class="treatment-note">
             <h3>O foco é indicar o caminho adequado, não empurrar um procedimento.</h3>
             <p>A indicação depende do diagnóstico, dos objetivos do paciente, dos riscos e dos benefícios esperados. Quando um procedimento é considerado, a equipe orienta preparo, autorizações e acompanhamento.</p>
-            <a class="btn btn-primary note-cta" href="#contato">
+            <a class="btn btn-primary note-cta" href="#agendamento" data-open-lead-modal aria-controls="agendamento">
               <i data-lucide="calendar-check" aria-hidden="true"></i>
               Avaliar meu caso
             </a>
@@ -304,7 +304,7 @@
               <span>CRM 18843 | RQE 18832</span>
             </div>
             <div class="inline-actions">
-              <a class="btn btn-primary" href="#contato">
+              <a class="btn btn-primary" href="#agendamento" data-open-lead-modal aria-controls="agendamento">
                 <i data-lucide="calendar-check" aria-hidden="true"></i>
                 Falar pelo WhatsApp
               </a>
@@ -324,7 +324,7 @@
               <li><i data-lucide="clock" aria-hidden="true"></i>Segunda a sexta, 08:00-18:00</li>
             </ul>
             <div class="inline-actions">
-              <a class="btn btn-primary" href="#contato">
+              <a class="btn btn-primary" href="#agendamento" data-open-lead-modal aria-controls="agendamento">
                 <i data-lucide="calendar-check" aria-hidden="true"></i>
                 Enviar mensagem no WhatsApp
               </a>
@@ -397,7 +397,7 @@
             <p class="eyebrow">Dúvidas frequentes</p>
             <h2>Respostas para decidir o próximo passo com mais clareza</h2>
             <div class="inline-actions">
-              <a class="btn btn-primary" href="#contato">
+              <a class="btn btn-primary" href="#agendamento" data-open-lead-modal aria-controls="agendamento">
                 <i data-lucide="send" aria-hidden="true"></i>
                 Tirar dúvida pelo WhatsApp
               </a>
@@ -429,39 +429,48 @@
       </section>
 
       <section class="final-cta section-dark" id="contato">
-        <div class="container final-grid">
+        <div class="container final-grid final-grid-single">
           <div>
             <p class="eyebrow">Agendamento</p>
             <h2>Quer entender qual cuidado faz sentido para sua dor?</h2>
-            <p>Preencha seus dados para abrir uma mensagem no WhatsApp. A equipe verifica disponibilidade de agenda e orienta sobre o atendimento na Asa Sul.</p>
+            <p>Clique no botão para preencher seus dados em um pop-up rápido. Depois do envio, a mensagem abre no WhatsApp para a equipe orientar sobre o atendimento na Asa Sul.</p>
             <div class="inline-actions final-copy-action">
-              <a class="btn btn-primary" href="#contato">
+              <a class="btn btn-primary" href="#agendamento" data-open-lead-modal aria-controls="agendamento">
                 <i data-lucide="message-circle" aria-hidden="true"></i>
-                Falar com a equipe
+                Preencher dados
               </a>
             </div>
           </div>
-          <form class="lead-form" data-phone="5561996079061" data-doctor="Dr. Thiago Cerqueira" aria-label="Formulário de agendamento">
-            <div class="form-heading">
-              <strong>Preencha para falar pelo WhatsApp</strong>
-              <span>Informe nome e telefone. Ao enviar, a mensagem já abre pronta para a equipe.</span>
-            </div>
-            <label>
-              <span>Nome</span>
-              <input type="text" name="nome" autocomplete="name" placeholder="Seu nome" required>
-            </label>
-            <label>
-              <span>Telefone</span>
-              <input type="tel" name="telefone" autocomplete="tel" inputmode="tel" placeholder="(61) 99999-9999" maxlength="15" pattern="\([0-9]{2}\) [0-9]{5}-[0-9]{4}" data-phone-mask required>
-            </label>
-            <button class="btn btn-primary" type="submit">
-              <i data-lucide="send" aria-hidden="true"></i>
-              Enviar pelo WhatsApp
-            </button>
-          </form>
         </div>
       </section>
     </main>
+
+    <div class="lead-modal" id="agendamento" data-lead-modal hidden>
+      <div class="lead-modal-backdrop" data-close-lead-modal></div>
+      <div class="lead-modal-dialog" role="dialog" aria-modal="true" aria-labelledby="lead-modal-title">
+        <button class="modal-close" type="button" data-close-lead-modal aria-label="Fechar formulário">
+          <i data-lucide="x" aria-hidden="true"></i>
+        </button>
+        <form class="lead-form" data-phone="5561996079061" data-doctor="Dr. Thiago Cerqueira" data-webhook="https://hook.us2.make.com/sje3qdhnonf6s866oegrooiuvoy6zzxm" aria-label="Formulário de agendamento">
+          <div class="form-heading">
+            <strong id="lead-modal-title">Preencha para falar pelo WhatsApp</strong>
+            <span>Informe nome e telefone. Ao enviar, a mensagem já abre pronta para a equipe.</span>
+          </div>
+          <label>
+            <span>Nome</span>
+            <input type="text" name="nome" autocomplete="name" placeholder="Seu nome" required>
+          </label>
+          <label>
+            <span>Telefone</span>
+            <input type="tel" name="telefone" autocomplete="tel" inputmode="tel" placeholder="(61) 99999-9999" maxlength="15" pattern="\([0-9]{2}\) [0-9]{5}-[0-9]{4}" data-phone-mask required>
+          </label>
+          <button class="btn btn-primary" type="submit">
+            <i data-lucide="send" aria-hidden="true"></i>
+            Enviar pelo WhatsApp
+          </button>
+        </form>
+      </div>
+    </div>
 
     <footer class="site-footer">
       <div class="container footer-grid">
@@ -471,6 +480,6 @@
     </footer>
 
     <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
-    <script src="../script.js?v=20260610-2"></script>
+    <script src="../script.js?v=20260618-1"></script>
   </body>
 </html>

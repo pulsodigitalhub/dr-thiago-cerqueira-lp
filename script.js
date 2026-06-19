@@ -71,6 +71,42 @@ document.querySelectorAll("[data-phone-mask]").forEach((input) => {
   });
 });
 
+const leadModal = document.querySelector("[data-lead-modal]");
+let leadModalLastFocus = null;
+
+function openLeadModal(event) {
+  event?.preventDefault();
+  if (!leadModal) return;
+  leadModalLastFocus = document.activeElement;
+  leadModal.hidden = false;
+  document.body.classList.add("modal-open");
+  const firstInput = leadModal.querySelector("input");
+  window.setTimeout(() => firstInput?.focus(), 50);
+}
+
+function closeLeadModal() {
+  if (!leadModal) return;
+  leadModal.hidden = true;
+  document.body.classList.remove("modal-open");
+  if (leadModalLastFocus && typeof leadModalLastFocus.focus === "function") {
+    leadModalLastFocus.focus();
+  }
+}
+
+document.querySelectorAll("[data-open-lead-modal]").forEach((trigger) => {
+  trigger.addEventListener("click", openLeadModal);
+});
+
+document.querySelectorAll("[data-close-lead-modal]").forEach((trigger) => {
+  trigger.addEventListener("click", closeLeadModal);
+});
+
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape" && leadModal && !leadModal.hidden) {
+    closeLeadModal();
+  }
+});
+
 document.querySelectorAll(".lead-form").forEach((form) => {
   form.addEventListener("submit", (event) => {
     event.preventDefault();
@@ -90,11 +126,31 @@ document.querySelectorAll(".lead-form").forEach((form) => {
     const doctor = form.dataset.doctor || "Dr. Thiago Cerqueira";
     const phone = form.dataset.phone || "5561996079061";
     const message = encodeURIComponent(`Olá, gostaria de agendar uma avaliação com ${doctor}.\n\nNome: ${nome}\nTelefone: ${telefone}`);
+    const webhook = form.dataset.webhook;
+    const payload = {
+      nome,
+      telefone,
+      telefone_digits: telefoneDigits,
+      medico: doctor,
+      origem: window.location.href,
+      evento: "lead_form_submit",
+      timestamp: new Date().toISOString()
+    };
 
     window.dataLayer = window.dataLayer || [];
     window.dataLayer.push({ event: "lead_form_submit", form_name: "cta_agendamento_thiago" });
 
+    if (webhook) {
+      fetch(webhook, {
+        method: "POST",
+        mode: "no-cors",
+        headers: { "Content-Type": "text/plain;charset=UTF-8" },
+        body: JSON.stringify(payload)
+      }).catch(() => {});
+    }
+
     window.open(`https://wa.me/${phone}?text=${message}`, "_blank", "noopener");
     form.reset();
+    closeLeadModal();
   });
 });
