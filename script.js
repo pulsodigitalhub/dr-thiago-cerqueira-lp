@@ -184,6 +184,7 @@ document.querySelectorAll(".lead-form").forEach((form) => {
     webhookData.set("telefone_digits", telefoneDigits);
     webhookData.set("medico", doctor);
     webhookData.set("origem", window.location.href);
+    webhookData.set("pagina", window.location.href);
     webhookData.set("evento", "lead_form_submit");
     webhookData.set("timestamp", new Date().toISOString());
     TRACKING_KEYS.forEach((key) => webhookData.set(key, trackingData[key]));
