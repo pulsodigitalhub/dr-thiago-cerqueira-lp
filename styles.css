@@ -1142,6 +1142,10 @@ body.modal-open {
 }
 
 @media (max-width: 680px) {
+  body {
+    padding-bottom: 82px;
+  }
+
   :root {
     --container: calc(100vw - 28px);
   }
@@ -1165,9 +1169,22 @@ body.modal-open {
   }
 
   .header-cta {
-    width: 46px;
-    padding: 0;
-    font-size: 0;
+    position: fixed;
+    left: 14px;
+    right: 14px;
+    bottom: calc(14px + env(safe-area-inset-bottom));
+    z-index: 80;
+    width: auto;
+    min-height: 54px;
+    padding: 0 18px;
+    border-radius: 8px;
+    font-size: 0.98rem;
+    box-shadow: 0 18px 36px rgba(37, 52, 54, 0.32);
+  }
+
+  .header-cta svg {
+    width: 20px;
+    height: 20px;
   }
 
   .section {
