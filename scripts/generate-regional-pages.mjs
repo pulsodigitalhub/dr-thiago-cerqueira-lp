@@ -127,7 +127,7 @@ const pages = [
       ["waves", "Bursites e tendinites", "Inflamações ao redor do joelho podem doer em pontos específicos."],
       ["file-search", "Alterações no exame", "Laudos precisam ser correlacionados com exame físico e história da dor."],
     ],
-    careTitle: "Como o atendimento organiza o tratamento",
+    careTitle: "Como o tratamento pode ser feito",
     care: [
       ["stethoscope", "Avaliação do joelho", "Exame de meniscos, ligamentos, alinhamento, força, mobilidade e pontos de dor."],
       ["clipboard-check", "Conduta sem pressa", "Nem toda dor precisa de cirurgia. A prioridade é entender o diagnóstico e a melhor sequência de cuidado."],
