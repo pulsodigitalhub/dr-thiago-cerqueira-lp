@@ -1255,6 +1255,44 @@ h3 {
   margin-top: 34px;
 }
 
+.regional-credential {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  max-width: 100%;
+  margin-top: 18px;
+  padding: 10px 14px;
+  border: 1px solid rgba(83, 104, 106, 0.14);
+  border-radius: 999px;
+  background: #f4f7f5;
+  color: var(--deep);
+  font-weight: 800;
+}
+
+.regional-credential span {
+  display: inline-grid;
+  flex: 0 0 auto;
+  width: 26px;
+  height: 26px;
+  place-items: center;
+  border-radius: 50%;
+  color: var(--teal);
+  background: rgba(82, 125, 143, 0.12);
+}
+
+.regional-credential svg {
+  width: 16px;
+  height: 16px;
+  stroke-width: 2.4;
+}
+
+.regional-credential p {
+  margin: 0;
+  color: var(--deep);
+  font-size: 0.92rem;
+  letter-spacing: 0.01em;
+}
+
 .lead-modal[hidden] {
   display: none;
 }
