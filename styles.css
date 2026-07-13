@@ -535,8 +535,7 @@ h3 {
   font-size: 1.35rem;
 }
 
-.convenios-card-intro p,
-.convenios-source {
+.convenios-card-intro p {
   margin: 0;
   color: rgba(255, 255, 255, 0.68);
 }
@@ -604,16 +603,6 @@ h3 {
 
 .convenios-toggle[aria-expanded="true"] svg {
   transform: rotate(180deg);
-}
-
-.convenios-source {
-  margin-top: 18px;
-  font-size: 0.86rem;
-}
-
-.convenios-source a {
-  color: var(--accent-soft);
-  font-weight: 750;
 }
 
 .concern-grid {
@@ -1464,10 +1453,6 @@ body.modal-open {
 
   .convenios-toggle {
     display: inline-flex;
-  }
-
-  .convenios-source {
-    text-align: center;
   }
 
   .quick-proof {
