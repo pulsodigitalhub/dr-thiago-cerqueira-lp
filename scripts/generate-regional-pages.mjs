@@ -333,6 +333,67 @@ function convenioMarkup() {
             <span class="convenio-item">${escapeHtml(convenio)}</span>`).join("");
 }
 
+const processIconSprite = String.raw`
+    <svg class="icon-sprite" aria-hidden="true">
+      <symbol id="icon-process-phone" viewBox="0 0 64 64">
+        <rect x="18" y="9" width="28" height="46" rx="5" fill="#3d6373"/>
+        <rect x="20" y="11" width="24" height="42" rx="3.5" fill="#527d8f"/>
+        <rect x="22" y="15" width="20" height="32" rx="2" fill="#ffffff"/>
+        <circle cx="32" cy="50.5" r="1.8" fill="#2c4d5a"/>
+        <rect x="29" y="13" width="6" height="1.2" rx="0.6" fill="#2c4d5a"/>
+        <rect x="25" y="19" width="11" height="5" rx="2.5" fill="#6e8f71"/>
+        <rect x="28" y="27" width="11" height="5" rx="2.5" fill="#e0e6e1"/>
+        <rect x="25" y="35" width="9" height="5" rx="2.5" fill="#6e8f71"/>
+        <circle cx="47" cy="14" r="7.5" fill="#25d366"/>
+        <path d="M43.5 14l2.5 2.5 5-5" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </symbol>
+      <symbol id="icon-process-eval" viewBox="0 0 64 64">
+        <circle cx="20" cy="11" r="3" fill="#b4863f"/>
+        <circle cx="20" cy="11" r="1.4" fill="#7a5a26"/>
+        <circle cx="38" cy="11" r="3" fill="#b4863f"/>
+        <circle cx="38" cy="11" r="1.4" fill="#7a5a26"/>
+        <path d="M20 14v14c0 5 4 9 9 9s9-4 9-9V14" fill="none" stroke="#527d8f" stroke-width="3.5" stroke-linecap="round"/>
+        <path d="M29 37v6c0 5 4 9 9 9s9-4 9-9" fill="none" stroke="#527d8f" stroke-width="3.5" stroke-linecap="round"/>
+        <circle cx="47" cy="46" r="8" fill="#6e8f71"/>
+        <circle cx="47" cy="46" r="5" fill="#8aab8d"/>
+        <circle cx="47" cy="46" r="1.8" fill="#3f5d42"/>
+        <path d="M9 30l2.5 0 1.8-4 3.5 8 1.8-4h2.5" fill="none" stroke="#b2694f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </symbol>
+      <symbol id="icon-process-plan" viewBox="0 0 64 64">
+        <rect x="14" y="11" width="36" height="46" rx="4" fill="#3d6373"/>
+        <rect x="16" y="13" width="32" height="42" rx="3" fill="#ffffff"/>
+        <rect x="22" y="6" width="20" height="10" rx="3" fill="#b4863f"/>
+        <rect x="24" y="8" width="16" height="6" rx="2" fill="#d9b36a"/>
+        <circle cx="22" cy="24" r="3.2" fill="#6e8f71"/>
+        <path d="M20.4 24l1.2 1.2 2.4-2.6" fill="none" stroke="#ffffff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+        <rect x="28" y="22.6" width="16" height="2.8" rx="1.4" fill="#cbd3d1"/>
+        <circle cx="22" cy="34" r="3.2" fill="#6e8f71"/>
+        <path d="M20.4 34l1.2 1.2 2.4-2.6" fill="none" stroke="#ffffff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+        <rect x="28" y="32.6" width="13" height="2.8" rx="1.4" fill="#cbd3d1"/>
+        <circle cx="22" cy="44" r="3.2" fill="#b2694f"/>
+        <path d="M20.6 42.6l2.8 2.8M23.4 42.6l-2.8 2.8" fill="none" stroke="#ffffff" stroke-width="1.6" stroke-linecap="round"/>
+        <rect x="28" y="42.6" width="15" height="2.8" rx="1.4" fill="#cbd3d1"/>
+      </symbol>
+      <symbol id="icon-process-calendar" viewBox="0 0 64 64">
+        <rect x="11" y="15" width="42" height="42" rx="4" fill="#ffffff"/>
+        <rect x="11" y="15" width="42" height="42" rx="4" fill="none" stroke="#3d6373" stroke-width="2"/>
+        <path d="M11 19a4 4 0 0 1 4-4h34a4 4 0 0 1 4 4v8H11Z" fill="#527d8f"/>
+        <rect x="19" y="9" width="4.5" height="12" rx="2.25" fill="#b4863f"/>
+        <rect x="40.5" y="9" width="4.5" height="12" rx="2.25" fill="#b4863f"/>
+        <rect x="16" y="32" width="6" height="5" rx="1.2" fill="#dde3e1"/>
+        <rect x="25" y="32" width="6" height="5" rx="1.2" fill="#dde3e1"/>
+        <rect x="34" y="32" width="6" height="5" rx="1.2" fill="#dde3e1"/>
+        <rect x="43" y="32" width="6" height="5" rx="1.2" fill="#dde3e1"/>
+        <rect x="16" y="40" width="6" height="5" rx="1.2" fill="#dde3e1"/>
+        <rect x="25" y="40" width="6" height="5" rx="1.2" fill="#dde3e1"/>
+        <rect x="43" y="40" width="6" height="5" rx="1.2" fill="#dde3e1"/>
+        <rect x="16" y="48" width="6" height="5" rx="1.2" fill="#dde3e1"/>
+        <rect x="25" y="48" width="6" height="5" rx="1.2" fill="#dde3e1"/>
+        <circle cx="37" cy="46" r="11" fill="#6e8f71" stroke="#ffffff" stroke-width="2.5"/>
+        <path d="M32 46l3.5 3.5 7-7" fill="none" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </symbol>
+    </svg>`;
+
 function leadModal(page) {
   return `
     <div class="lead-modal" id="agendamento" data-lead-modal hidden>
@@ -392,6 +453,7 @@ function renderPage(page) {
   </head>
   <body class="regional-page">
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NLWCWSRM" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+${processIconSprite}
 
     <header class="site-header" data-elevate>
       <a class="brand" href="../" aria-label="Dr. Thiago Cerqueira">
@@ -543,22 +605,26 @@ ${convenioMarkup()}
         </div>
         <div class="container process-steps">
           <article>
-            <span>1</span>
+            <span>01</span>
+            <svg class="process-icon" aria-hidden="true"><use href="#icon-process-phone"></use></svg>
             <h3>Fale com a equipe</h3>
             <p>Confirme agenda, convênio e orientações iniciais para a avaliação.</p>
           </article>
           <article>
-            <span>2</span>
+            <span>02</span>
+            <svg class="process-icon" aria-hidden="true"><use href="#icon-process-eval"></use></svg>
             <h3>Passe pela consulta</h3>
             <p>O Dr. Thiago avalia sua queixa, rotina, histórico e exames já realizados.</p>
           </article>
           <article>
-            <span>3</span>
+            <span>03</span>
+            <svg class="process-icon" aria-hidden="true"><use href="#icon-process-plan"></use></svg>
             <h3>Entenda as opções</h3>
             <p>Você recebe explicação sobre diagnóstico provável, alternativas e próximos passos.</p>
           </article>
           <article>
-            <span>4</span>
+            <span>04</span>
+            <svg class="process-icon" aria-hidden="true"><use href="#icon-process-calendar"></use></svg>
             <h3>Siga a conduta indicada</h3>
             <p>Quando houver procedimento, a equipe orienta preparo, autorização e acompanhamento.</p>
           </article>
