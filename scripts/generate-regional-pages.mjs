@@ -218,7 +218,7 @@ const pages = [
       ["Dor no quadril sempre é artrose?", "Não. Pode ser bursite, tendão, músculo, coluna, sobrecarga ou outras causas."],
       ["Dor lateral ao deitar pode ser bursite?", "Pode, mas a confirmação depende de avaliação. Outras estruturas também podem gerar dor lateral."],
       ["Quando procurar atendimento?", "Quando a dor limita caminhada, sono, escadas, apoio ou persiste por semanas."],
-      ["Toda artrose precisa de cirurgia?", "Não. A conduta depende do grau de desgaste, limitação, dor e resposta aos tratamentos."],
+      ["Toda artrose precisa de cirurgia?", "Não. Muitos casos começam com medidas para controle da dor, melhora da mobilidade e fortalecimento."],
     ],
   },
   {
@@ -256,7 +256,7 @@ const pages = [
     ],
     faq: [
       ["Formigamento na mão pode ser túnel do carpo?", "Pode, mas existem outras causas. A avaliação ajuda a localizar a origem do sintoma."],
-      ["Dedo em gatilho precisa operar?", "Nem sempre. A conduta depende do grau de travamento, dor, tempo de sintomas e resposta ao tratamento."],
+      ["Dedo em gatilho precisa operar?", "Nem sempre. Em fases iniciais, pode ser possível controlar dor e inflamação antes de considerar cirurgia."],
       ["Cisto no punho é perigoso?", "Na maioria das vezes é benigno, mas deve ser avaliado quando dói, cresce ou limita movimentos."],
       ["Quando devo procurar atendimento após queda?", "Quando há dor persistente, inchaço, deformidade, perda de força ou dificuldade para apoiar a mão."],
     ],
@@ -432,7 +432,6 @@ function renderPage(page) {
                 Ver lista de convênios
               </a>
             </div>
-            <p class="microcopy">A conduta depende da avaliação médica, do diagnóstico e da evolução de cada paciente.</p>
           </div>
           <aside class="region-hero-card" aria-label="Resumo do atendimento">
             <i data-lucide="badge-check" aria-hidden="true"></i>
