@@ -124,6 +124,7 @@
       <nav class="nav" aria-label="Navegação principal">
         <a href="#tratamentos">Tratamentos</a>
         <a href="#como-funciona">Como funciona</a>
+        <a href="#convenios">Convênios</a>
         <a href="#localizacao">Localização</a>
       </nav>
       <a class="header-cta" href="https://wa.me/5561996079061?text=Ol%C3%A1%2C%20gostaria%20de%20verificar%20a%20disponibilidade%20de%20agenda%20com%20o%20Dr.%20Thiago%20Cerqueira." target="_blank" rel="noopener">
@@ -149,9 +150,9 @@
                 <i data-lucide="calendar-check" aria-hidden="true"></i>
                 Agendar avaliação
               </a>
-              <a class="btn btn-ghost" href="#localizacao">
-                <i data-lucide="map-pin" aria-hidden="true"></i>
-                Ver local de atendimento
+              <a class="btn btn-convenios" href="#convenios">
+                <i data-lucide="credit-card" aria-hidden="true"></i>
+                Ver lista de convênios
               </a>
             </div>
             <p class="microcopy">A conduta é definida após avaliação médica. Resultados variam conforme cada caso.</p>
@@ -181,6 +182,80 @@
             <h2>Orientação clara</h2>
             <p>O atendimento organiza possibilidades, limites e próximos passos para cada caso.</p>
           </article>
+        </div>
+      </section>
+
+      <section class="section convenios-section" id="convenios">
+        <div class="container convenios-heading">
+          <p class="eyebrow">Convênios AMHP</p>
+          <h2>Lista de convênios atendidos</h2>
+          <p>A lista abaixo segue os convênios ativos divulgados pela AMHP. Cobertura, disponibilidade de agenda e autorizações devem ser confirmadas com a equipe antes do atendimento.</p>
+        </div>
+        <div class="container convenios-card">
+          <div class="convenios-card-intro">
+            <span class="convenios-icon" aria-hidden="true">
+              <i data-lucide="shield-check"></i>
+            </span>
+            <div>
+              <h3>Convênios disponíveis para consulta</h3>
+              <p>48 convênios listados pela AMHP.</p>
+            </div>
+          </div>
+          <div class="convenios-list" id="convenios-list" data-convenios-list>
+            <span class="convenio-item">AFEB BRASAL</span>
+            <span class="convenio-item">AFFEGO</span>
+            <span class="convenio-item">ANAFE SAÚDE</span>
+            <span class="convenio-item">BACEN</span>
+            <span class="convenio-item">BRB (SAÚDE BRB)</span>
+            <span class="convenio-item">CAEME - GO</span>
+            <span class="convenio-item">CAESAN</span>
+            <span class="convenio-item">CAMED</span>
+            <span class="convenio-item">CARE PLUS</span>
+            <span class="convenio-item">CASEC (CODEVASF)</span>
+            <span class="convenio-item">CASEMBRAPA (EMBRAPA)</span>
+            <span class="convenio-item">CBMDF</span>
+            <span class="convenio-item">CLIQUE MÉDICOS</span>
+            <span class="convenio-item">CNTI</span>
+            <span class="convenio-item">CONAB</span>
+            <span class="convenio-item">EMBRATEL (TELOS)</span>
+            <span class="convenio-item">FAPES (BNDES)</span>
+            <span class="convenio-item">FASCAL</span>
+            <span class="convenio-item">GDF SAÚDE</span>
+            <span class="convenio-item">GEAP</span>
+            <span class="convenio-item">GRAVIA</span>
+            <span class="convenio-item">LIFE EMPRESARIAL</span>
+            <span class="convenio-item">LUMINAR SAÚDE (EVIDA)</span>
+            <span class="convenio-item">NOTRE DAME</span>
+            <span class="convenio-item">OMINT SAÚDE</span>
+            <span class="convenio-item">PF SAÚDE (POLÍCIA FEDERAL)</span>
+            <span class="convenio-item">PLAN ASSISTE (MPU)</span>
+            <span class="convenio-item">PLAS/JMU (STM)</span>
+            <span class="convenio-item">PMDF - CONSULTAS MÉDICAS</span>
+            <span class="convenio-item">PMDF - SAÚDE MENTAL E TERAPIAS</span>
+            <span class="convenio-item">POSTAL SAÚDE (ECT) - (SUSPENSO)</span>
+            <span class="convenio-item">PROASA</span>
+            <span class="convenio-item">PRÓ-SAÚDE (CÂMARA DOS DEPUTADOS)</span>
+            <span class="convenio-item">PRÓ-SAÚDE (TJDFT)</span>
+            <span class="convenio-item">PRÓ-SER (STJ)</span>
+            <span class="convenio-item">PRÓ-SOCIAL (TRF)</span>
+            <span class="convenio-item">REAL GRANDEZA (DEMAIS PLANOS)</span>
+            <span class="convenio-item">REAL GRANDEZA (SALVUS E SALUTEM)</span>
+            <span class="convenio-item">SAÚDE CAIXA</span>
+            <span class="convenio-item">SAÚDE PETROBRAS</span>
+            <span class="convenio-item">SERPRO</span>
+            <span class="convenio-item">SIS SENADO</span>
+            <span class="convenio-item">STF-MED (STF)</span>
+            <span class="convenio-item">TRE SAÚDE</span>
+            <span class="convenio-item">TRT SAÚDE</span>
+            <span class="convenio-item">TST SAÚDE</span>
+            <span class="convenio-item">UNAFISCO SAÚDE (DEMAIS PLANOS)</span>
+            <span class="convenio-item">UNAFISCO SAÚDE (PREMIUM)</span>
+          </div>
+          <button class="btn convenios-toggle" type="button" data-convenios-toggle aria-expanded="false" aria-controls="convenios-list">
+            <span>Ver mais convênios</span>
+            <i data-lucide="chevron-down" aria-hidden="true"></i>
+          </button>
+          <p class="convenios-source">Fonte: <a href="https://www.amhp.com.br/pages/convenios/" target="_blank" rel="noopener">lista de convênios ativos da AMHP</a>.</p>
         </div>
       </section>
 

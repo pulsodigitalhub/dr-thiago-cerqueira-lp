@@ -54,6 +54,22 @@ document.querySelectorAll("[data-carousel]").forEach((carousel) => {
   show(active);
 });
 
+document.querySelectorAll("[data-convenios-toggle]").forEach((button) => {
+  const section = button.closest(".convenios-section");
+  const list = section?.querySelector("[data-convenios-list]");
+  const label = button.querySelector("span");
+
+  if (!list) return;
+
+  button.addEventListener("click", () => {
+    const isExpanded = list.classList.toggle("is-expanded");
+    button.setAttribute("aria-expanded", isExpanded ? "true" : "false");
+    if (label) {
+      label.textContent = isExpanded ? "Ver menos convênios" : "Ver mais convênios";
+    }
+  });
+});
+
 function formatPhone(value) {
   const digits = value.replace(/\D/g, "").slice(0, 11);
   if (digits.length <= 2) return digits;
