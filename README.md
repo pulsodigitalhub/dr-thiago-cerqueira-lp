@@ -16,6 +16,19 @@ Abrir:
 http://127.0.0.1:8123/
 ```
 
+## Variações por região do corpo
+
+As páginas regionais ficam em rotas diretas, mantendo a home principal sem alteração:
+
+- `/coluna/`
+- `/joelho/`
+- `/ombro/`
+- `/quadril/`
+- `/mao-punho/`
+- `/pe-tornozelo/`
+
+O conteúdo dessas páginas é gerado por `scripts/generate-regional-pages.mjs`, para manter copy, estrutura, CTAs e lista de convênios consistentes entre as variações.
+
 ## Arquivos principais
 
 - `index.html`: pagina navegavel.
