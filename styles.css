@@ -1236,6 +1236,14 @@ h3 {
   stroke-width: 2.2;
 }
 
+.regional-card-grid article .topic-icon,
+.regional-care-grid article .topic-icon {
+  display: block;
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+}
+
 .regional-card-grid h3,
 .regional-care-grid h3 {
   margin: 0;

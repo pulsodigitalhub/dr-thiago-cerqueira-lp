@@ -60,6 +60,108 @@ const convenios = [
   "UNAFISCO SAÚDE (PREMIUM)",
 ];
 
+const topicIconOverrides = {
+  // Coluna
+  "Dor lombar persistente": "healthicons:back-pain-outline",
+  "Travamento nas costas": "healthicons:spine-outline",
+  "Dor descendo para a perna": "healthicons:nerve-outline",
+  "Formigamento ou dormência": "healthicons:nerve-outline",
+  "Dor cervical": "healthicons:spine-outline",
+  "Exame que gerou dúvida": "healthicons:xray-outline",
+  "Sobrecarga muscular": "healthicons:weights-outline",
+  "Alterações de disco": "healthicons:spine-outline",
+  "Articulações da coluna": "healthicons:joints-outline",
+  "Irritação nervosa": "healthicons:nerve-outline",
+  "Crises recorrentes": "healthicons:back-pain-outline",
+  "Sinais de alerta": "healthicons:pain-outline",
+  "Exame clínico direcionado": "healthicons:stethoscope-outline",
+  "Leitura dos exames": "healthicons:xray-outline",
+  "Plano individual": "medical-icon:medical-records",
+  "Procedimentos quando indicados": "healthicons:syringe-outline",
+
+  // Joelho
+  "Dor ao subir escadas": "healthicons:walking-outline",
+  "Inchaço no joelho": "healthicons:joints-outline",
+  "Estalos e crepitação": "healthicons:joints-outline",
+  "Falseio ou instabilidade": "healthicons:joints-outline",
+  "Travamento": "healthicons:joints-outline",
+  "Dor para caminhar": "healthicons:walking-outline",
+  "Artrose e desgaste": "healthicons:joints-outline",
+  "Lesões de menisco": "healthicons:joints-outline",
+  "Lesões ligamentares": "healthicons:joints-outline",
+  "Sobrecarga no treino": "healthicons:weights-outline",
+  "Bursites e tendinites": "healthicons:joints-outline",
+  "Alterações no exame": "healthicons:xray-outline",
+  "Avaliação do joelho": "healthicons:joints-outline",
+  "Conduta sem pressa": "medical-icon:medical-records",
+  "Infiltrações e viscossuplementação": "healthicons:syringe-outline",
+  "Retorno às atividades": "healthicons:walking-outline",
+
+  // Ombro
+  "Dificuldade para elevar o braço": "hugeicons:shoulder",
+  "Dor à noite": "healthicons:pain-outline",
+  "Perda de força": "healthicons:weights-outline",
+  "Ombro rígido": "hugeicons:shoulder",
+  "Dor após queda": "healthicons:pain-outline",
+  "Laudo com tendinite ou bursite": "healthicons:xray-outline",
+  "Tendinopatias": "hugeicons:shoulder",
+  "Bursite": "hugeicons:shoulder",
+  "Manguito rotador": "hugeicons:shoulder",
+  "Capsulite adesiva": "hugeicons:shoulder",
+  "Sobrecarga repetitiva": "healthicons:weights-outline",
+  "Dor irradiada": "healthicons:nerve-outline",
+  "Testes do ombro": "healthicons:stethoscope-outline",
+  "Análise de imagem": "healthicons:xray-outline",
+  "Plano de recuperação": "medical-icon:medical-records",
+
+  // Quadril
+  "Dor ao deitar de lado": "healthicons:pain-outline",
+  "Rigidez": "healthicons:joints-outline",
+  "Mancar": "healthicons:walking-outline",
+  "Dor após queda ou esforço": "healthicons:pain-outline",
+  "Exame com artrose ou bursite": "healthicons:xray-outline",
+  "Artrose": "healthicons:joints-outline",
+  "Bursite trocantérica": "material-symbols:femur-outline",
+  "Tendinopatias": "material-symbols:femur-outline",
+  "Dor referida": "healthicons:nerve-outline",
+  "Traumas": "healthicons:pain-outline",
+  "Exame do quadril": "material-symbols:femur-outline",
+  "Imagem com contexto": "healthicons:xray-outline",
+  "Tratamento proporcional": "medical-icon:medical-records",
+  "Recursos para dor": "healthicons:syringe-outline",
+
+  // Mão e punho
+  "Dor ao digitar ou segurar objetos": "material-symbols:wrist-outline",
+  "Formigamento nos dedos": "healthicons:nerve-outline",
+  "Dedo travando": "material-symbols:wrist-outline",
+  "Cisto ou caroço no punho": "healthicons:joints-outline",
+  "Tendinites e tenossinovites": "material-symbols:wrist-outline",
+  "Compressões nervosas": "healthicons:nerve-outline",
+  "Dedo em gatilho": "material-symbols:wrist-outline",
+  "Cistos sinoviais": "healthicons:joints-outline",
+  "Fraturas e entorses": "material-symbols:ulna-radius-outline",
+  "Exame da mão e punho": "material-symbols:wrist-outline",
+  "Exames quando necessários": "healthicons:xray-outline",
+  "Conduta individualizada": "medical-icon:medical-records",
+  "Procedimentos selecionados": "healthicons:syringe-outline",
+
+  // Pé e tornozelo
+  "Dor no calcanhar": "healthicons:foot-outline",
+  "Dor ao caminhar": "healthicons:walking-outline",
+  "Entorses recorrentes": "material-symbols:foot-bones-outline",
+  "Inchaço": "healthicons:foot-outline",
+  "Dor em tendões": "healthicons:foot-outline",
+  "Dificuldade com calçados": "healthicons:orthotics-outline",
+  "Fascite plantar": "healthicons:foot-outline",
+  "Tendinites": "healthicons:foot-outline",
+  "Entorses e instabilidade": "material-symbols:foot-bones-outline",
+  "Fraturas por trauma ou estresse": "material-symbols:foot-bones-outline",
+  "Sobrecarga no esporte": "healthicons:weights-outline",
+  "Exame funcional": "healthicons:stethoscope-outline",
+  "Exames de imagem": "healthicons:xray-outline",
+  "Plano de retorno": "medical-icon:medical-records",
+};
+
 const pages = [
   {
     slug: "coluna",
@@ -311,10 +413,24 @@ function escapeHtml(value) {
     .replaceAll('"', "&quot;");
 }
 
+function topicIconFileName(icon) {
+  return `${icon.replaceAll(":", "-")}.svg`;
+}
+
+function topicIconMarkup(icon, title) {
+  const resolvedIcon = topicIconOverrides[title] || icon;
+
+  if (resolvedIcon.includes(":")) {
+    return `<img class="topic-icon" src="../assets/topic-icons/${escapeHtml(topicIconFileName(resolvedIcon))}" alt="" aria-hidden="true" loading="lazy">`;
+  }
+
+  return `<i data-lucide="${escapeHtml(resolvedIcon)}" aria-hidden="true"></i>`;
+}
+
 function cardMarkup(items) {
   return items.map(([icon, title, text]) => `
             <article>
-              <i data-lucide="${escapeHtml(icon)}" aria-hidden="true"></i>
+              ${topicIconMarkup(icon, title)}
               <h3>${escapeHtml(title)}</h3>
               <p>${escapeHtml(text)}</p>
             </article>`).join("");
