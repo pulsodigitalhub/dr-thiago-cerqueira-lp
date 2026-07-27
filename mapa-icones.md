@@ -1,133 +1,136 @@
-# Mapa de Icones — Dr. Thiago Cerqueira
+# Mapa de ícones — Dr. Thiago Cerqueira
 
-Auditoria retroativa completa das ~94 entradas de `topicIconOverrides` em `scripts/generate-regional-pages.mjs`, seguindo o metodo em `docs/repertorio-icones.md` do repo de processo (`calilmf/processo-criacao-lp`). Preenchido apos a correcao dos casos ja reportados (icone de coracao em "Crises recorrentes", cadeado em "Travamento", icone de curativo em "Inchaco no joelho").
+Um ícone por card, escolhido por **revisão visual** (contact sheet a 32px e 96px), não por nome.
+Ver o método em `docs/repertorio-icones.md` do repo `processo-criacao-lp`.
 
-Legenda de bucket: **A** = match literal (nome do icone descreve o conceito). **B** = composto (dois icones literais do mesmo dominio combinados num SVG). **C** = fallback documentado (sem icone literal disponivel, usando icone anatomico do mesmo dominio/regiao).
+Regra estrutural: card da página `X` só usa ícone de `assets/topic-icons/X/`.
 
-## Coluna
+## coluna
 
-| Secao | Card | Conceito literal | Icone | Bucket | Justificativa |
-| --- | --- | --- | --- | --- | --- |
-| Sintomas | Dor lombar persistente | Dor nas costas | healthicons:back-pain-outline | A | Nome descreve exatamente o conceito |
-| Sintomas | Travamento nas costas | Limitacao de movimento por travamento | healthicons:crutches-outline | C | Sem icone literal de "travamento nas costas"; muleta representa a limitacao de mobilidade resultante, mesmo dominio, consistente com o mesmo conceito no joelho |
-| Sintomas | Dor descendo para a perna | Dor irradiada por nervo | healthicons:nerve-outline | A | Nervo e o mecanismo literal da dor irradiada |
-| Sintomas | Formigamento ou dormência | Alteracao de sensibilidade em extremidade | material-symbols:front-hand-outline | C | Sem icone literal para formigamento/dormencia; mao representa a extremidade afetada, sem tomar emprestado de outro dominio |
-| Sintomas | Dor cervical | Dor localizada no pescoco | healthicons:pain-outline | C | Sem icone literal de "dor cervical"; marcador de dor generico, dentro do dominio clinico |
-| Sintomas | Exame que gerou dúvida | Resultado de exame de imagem | healthicons:xray-outline | A | Raio-x descreve exame de imagem |
-| Causas | Sobrecarga muscular | Esforco muscular excessivo | healthicons:weights-outline | A | Halteres = sobrecarga de esforco/treino |
-| Causas | Alterações de disco | Alteracao estrutural da coluna | healthicons:spine-outline | A | Disco intervertebral e parte da coluna; icone de coluna e o mais literal disponivel para estrutura vertebral |
-| Causas | Articulações da coluna | Articulacao | healthicons:joints-outline | A | Nome descreve exatamente articulacao |
-| Causas | Irritação nervosa | Nervo sensibilizado | healthicons:nerve-outline | A | Nome descreve exatamente nervo |
-| Causas | Crises recorrentes | Crise/piora recorrente na coluna | composto: spine + alerta | B | Sem icone literal para "crise recorrente"; composto de coluna (healthicons:spine-outline) + alerta (material-symbols:dangerous-outline), ambos literais e do mesmo dominio — substitui o icone de pulso cardiaco (dominio errado) reportado |
-| Causas | Sinais de alerta | Sinal clinico de gravidade | healthicons:traumatism-outline | C | Sem icone literal de "sinal de alerta clinico"; traumatism transmite urgencia/gravidade dentro do vocabulario de saude, nao emprestado de dominio diferente |
-| Cuidados | Exame clínico direcionado | Avaliacao clinica | healthicons:stethoscope-outline | A | Estetoscopio = exame clinico |
-| Cuidados | Leitura dos exames | Interpretacao de exames de imagem | healthicons:skeleton-outline | C | Sem icone literal de "leitura de exame"; esqueleto representa a analise de imagem estrutural, mesmo dominio |
-| Cuidados | Plano individual | Conduta/plano de tratamento | medical-icon:medical-records | A | Prontuario = plano/registro individual |
-| Cuidados | Procedimentos quando indicados | Procedimento clinico | healthicons:syringe-outline | A | Seringa = procedimento |
+| Card | Arquivo | Ícone de origem |
+| --- | --- | --- |
+| Dor lombar persistente | `coluna/dor-lombar-persistente.svg` | `healthicons:back-pain-outline` |
+| Travamento nas costas | `coluna/travamento-nas-costas.svg` | `healthicons:walk-supported-outline` |
+| Dor descendo para a perna | `coluna/dor-descendo-para-a-perna.svg` | `hugeicons:body-part-leg` |
+| Formigamento ou dormência | `coluna/formigamento-ou-dormencia.svg` | `material-symbols:front-hand-outline` |
+| Dor cervical | `coluna/dor-cervical.svg` | `healthicons:headache-outline` |
+| Exame que gerou dúvida | `coluna/exame-que-gerou-duvida.svg` | `healthicons:xray-outline` |
+| Sobrecarga muscular | `coluna/sobrecarga-muscular.svg` | `hugeicons:back-muscle-body` |
+| Alterações de disco | `coluna/alteracoes-de-disco.svg` | `healthicons:spine-outline` |
+| Articulações da coluna | `coluna/articulacoes-da-coluna.svg` | `icon-park-outline:rectangular-vertebra` |
+| Irritação nervosa | `coluna/irritacao-nervosa.svg` | `healthicons:nerve-outline` |
+| Crises recorrentes | `coluna/crises-recorrentes.svg` | `solar:repeat-outline` |
+| Sinais de alerta | `coluna/sinais-de-alerta.svg` | `healthicons:alert-triangle-outline` |
+| Exame clínico direcionado | `coluna/exame-clinico-direcionado.svg` | `healthicons:stethoscope-outline` |
+| Leitura dos exames | `coluna/leitura-dos-exames.svg` | `healthicons:radiology-outline` |
+| Plano individual | `coluna/plano-individual.svg` | `healthicons:medical-records-outline` |
+| Procedimentos quando indicados | `coluna/procedimentos-quando-indicados.svg` | `healthicons:syringe-outline` |
 
-## Joelho
+## joelho
 
-| Secao | Card | Conceito literal | Icone | Bucket | Justificativa |
-| --- | --- | --- | --- | --- | --- |
-| Sintomas | Dor ao subir escadas | Dor ao caminhar/mobilidade | healthicons:walking-outline | A | Pessoa caminhando = mobilidade |
-| Sintomas | Inchaço no joelho | Inchaco/trauma articular | healthicons:traumatism-outline | C | Sem icone literal de inchaco; marca de trauma representa lesao/inflamacao, mesmo dominio — substitui o icone de curativo na cabeca (sem relacao) reportado |
-| Sintomas | Estalos e crepitação | Som articular | healthicons:joints-outline | A | Articulacao e a origem literal do estalo/crepitacao |
-| Sintomas | Falseio ou instabilidade | Instabilidade ao caminhar | healthicons:walk-supported-outline | A | Pessoa andando amparada = instabilidade |
-| Sintomas | Travamento | Bloqueio de movimento articular | healthicons:crutches-outline | C | Sem icone literal de "travamento"; muleta representa a limitacao de mobilidade resultante |
-| Sintomas | Dor para caminhar | Dificuldade para caminhar por dor | healthicons:cane-outline | A | Bengala = apoio para caminhar por dor |
-| Causas | Artrose e desgaste | Degeneracao articular | healthicons:joints-outline | A | Articulacao = local do desgaste |
-| Causas | Lesões de menisco | Lesao de menisco | healthicons:orthopaedics-outline | C | Nao existe icone literal de menisco em nenhum set indexado (confirmado por busca); orteses/ortopedia geral como fallback do mesmo dominio |
-| Causas | Lesões ligamentares | Lesao ligamentar | healthicons:cast-outline | B | Nao existe icone literal de ligamento; gesso representa a imobilizacao tipica de lesao ligamentar, associacao clinica real, mesmo dominio |
-| Causas | Sobrecarga no treino | Sobrecarga de esforco fisico | healthicons:weights-outline | A | Halteres = sobrecarga de treino |
-| Causas | Bursites e tendinites | Inflamacao de bursa/tendao | healthicons:pain-outline | C | Nao existe icone literal de bursite/tendinite; marcador de dor generico dentro do dominio clinico |
-| Causas | Alterações no exame | Achado de exame de imagem | healthicons:xray-outline | A | Raio-x = exame de imagem |
-| Cuidados | Avaliação do joelho | Avaliacao articular | healthicons:joints-outline | A | Articulacao = objeto da avaliacao |
-| Cuidados | Conduta sem pressa | Plano de conduta | medical-icon:medical-records | A | Prontuario = conduta/plano |
-| Cuidados | Infiltrações e viscossuplementação | Procedimento com injecao | healthicons:syringe-outline | A | Seringa = infiltracao |
-| Cuidados | Retorno às atividades | Retorno a caminhar/atividade | healthicons:walking-outline | A | Pessoa caminhando = retorno a atividade |
+| Card | Arquivo | Ícone de origem |
+| --- | --- | --- |
+| Dor ao subir escadas | `joelho/dor-ao-subir-escadas.svg` | `material-symbols:stairs-outline` |
+| Inchaço no joelho | `joelho/inchaco-no-joelho.svg` | `game-icons:knee-bandage` |
+| Estalos e crepitação | `joelho/estalos-e-crepitacao.svg` | `healthicons:joints-outline` |
+| Falseio ou instabilidade | `joelho/falseio-ou-instabilidade.svg` | `game-icons:falling` |
+| Travamento | `joelho/travamento.svg` | `healthicons:crutches-outline` |
+| Dor para caminhar | `joelho/dor-para-caminhar.svg` | `healthicons:walking-outline` |
+| Artrose e desgaste | `joelho/artrose-e-desgaste.svg` | `game-icons:knee-cap` |
+| Lesões de menisco | `joelho/lesoes-de-menisco.svg` | `streamline-ultimate:medical-specialty-knee-1` |
+| Lesões ligamentares | `joelho/lesoes-ligamentares.svg` | `game-icons:knee-pad` |
+| Sobrecarga no treino | `joelho/sobrecarga-no-treino.svg` | `healthicons:weights-outline` |
+| Bursites e tendinites | `joelho/bursites-e-tendinites.svg` | `hugeicons:body-part-leg` |
+| Alterações no exame | `joelho/alteracoes-no-exame.svg` | `healthicons:xray-outline` |
+| Avaliação do joelho | `joelho/avaliacao-do-joelho.svg` | `healthicons:stethoscope-outline` |
+| Conduta sem pressa | `joelho/conduta-sem-pressa.svg` | `healthicons:medical-records-outline` |
+| Infiltrações e viscossuplementação | `joelho/infiltracoes-e-viscossuplementacao.svg` | `healthicons:syringe-outline` |
+| Retorno às atividades | `joelho/retorno-as-atividades.svg` | `healthicons:exercise-outline` |
 
-## Ombro
+## ombro
 
-| Secao | Card | Conceito literal | Icone | Bucket | Justificativa |
-| --- | --- | --- | --- | --- | --- |
-| Sintomas | Dificuldade para elevar o braço | Limitacao de movimento do ombro | hugeicons:shoulder | A | Icone de ombro = articulacao do ombro |
-| Sintomas | Dor à noite | Dor noturna no ombro | composto: ombro + lua | B | Sem icone literal de "dor noturna"; composto de ombro (hugeicons:shoulder) + lua (material-symbols:mode-night-outline), ambos literais — substitui reaproveitamento de marcador de dor generico que colidia com "Bursite" na mesma pagina |
-| Sintomas | Perda de força | Fraqueza muscular | healthicons:weights-outline | A | Halteres = forca/carga muscular |
-| Sintomas | Ombro rígido | Rigidez/imobilidade do ombro | healthicons:sling-outline | A | Tipoia = imobilizacao do ombro, associacao clinica direta com rigidez |
-| Sintomas | Dor após queda | Trauma por queda | healthicons:traumatism-outline | A | Nome descreve exatamente trauma |
-| Sintomas | Laudo com tendinite ou bursite | Achado de exame | healthicons:xray-outline | A | Raio-x = laudo de exame |
-| Causas | Tendinopatias | Alteracao de tendao | healthicons:orthopaedics-outline | C | Nao existe icone literal de tendinopatia; ortopedia geral como fallback do mesmo dominio |
-| Causas | Bursite | Inflamacao da bursa | healthicons:pain-outline | C | Nao existe icone literal de bursite; marcador de dor generico, unico nesta pagina apos mover "Dor a noite" pro composto |
-| Causas | Manguito rotador | Estrutura do manguito rotador | hugeicons:shoulder | A | Reuso aceito e documentado: unico icone literal de ombro disponivel; tanto este quanto "Dificuldade para elevar o braco" sao sobre a mesma articulacao, nao e escolha aleatoria |
-| Causas | Capsulite adesiva | Ombro congelado | healthicons:sling-outline | A | Reuso aceito e documentado: capsulite adesiva e clinicamente a mesma condicao de "Ombro rigido" (sintoma), tipoia se aplica igualmente |
-| Causas | Sobrecarga repetitiva | Sobrecarga de esforco repetitivo | healthicons:weights-outline | A | Halteres = sobrecarga |
-| Causas | Dor irradiada | Dor de origem nervosa/cervical | healthicons:nerve-outline | A | Nervo = mecanismo da dor irradiada |
-| Cuidados | Testes do ombro | Avaliacao clinica | healthicons:stethoscope-outline | A | Estetoscopio = avaliacao clinica |
-| Cuidados | Análise de imagem | Exame de imagem | healthicons:xray-outline | A | Raio-x = exame de imagem |
-| Cuidados | Plano de recuperação | Plano de tratamento | medical-icon:medical-records | A | Prontuario = plano |
-| Cuidados | Procedimentos quando indicados | Procedimento clinico | healthicons:syringe-outline | A | Seringa = procedimento |
+| Card | Arquivo | Ícone de origem |
+| --- | --- | --- |
+| Dificuldade para elevar o braço | `ombro/dificuldade-para-elevar-o-braco.svg` | `healthicons:arm-outline` |
+| Dor à noite | `ombro/dor-a-noite.svg` | `material-symbols:bed-outline` |
+| Perda de força | `ombro/perda-de-forca.svg` | `hugeicons:body-part-muscle` |
+| Ombro rígido | `ombro/ombro-rigido.svg` | `healthicons:sling-outline` |
+| Dor após queda | `ombro/dor-apos-queda.svg` | `material-symbols:personal-injury-outline` |
+| Laudo com tendinite ou bursite | `ombro/laudo-com-tendinite-ou-bursite.svg` | `healthicons:ultrasound-scanner-outline` |
+| Tendinopatias | `ombro/tendinopatias.svg` | `tabler:bandage` |
+| Bursite | `ombro/bursite.svg` | `healthicons:pain-outline` |
+| Manguito rotador | `ombro/manguito-rotador.svg` | `hugeicons:shoulder` |
+| Capsulite adesiva | `ombro/capsulite-adesiva.svg` | `game-icons:arm-sling` |
+| Sobrecarga repetitiva | `ombro/sobrecarga-repetitiva.svg` | `solar:repeat-outline` |
+| Dor irradiada | `ombro/dor-irradiada.svg` | `healthicons:nerve-outline` |
+| Testes do ombro | `ombro/testes-do-ombro.svg` | `healthicons:stethoscope-outline` |
+| Análise de imagem | `ombro/analise-de-imagem.svg` | `healthicons:xray-outline` |
+| Plano de recuperação | `ombro/plano-de-recuperacao.svg` | `healthicons:medical-records-outline` |
+| Procedimentos quando indicados | `ombro/procedimentos-quando-indicados.svg` | `healthicons:syringe-outline` |
 
-## Quadril
+## quadril
 
-| Secao | Card | Conceito literal | Icone | Bucket | Justificativa |
-| --- | --- | --- | --- | --- | --- |
-| Sintomas | Dor ao deitar de lado | Dor lateral do quadril | healthicons:pain-outline | C | Sem icone literal de "dor ao deitar"; marcador de dor generico |
-| Sintomas | Rigidez | Rigidez articular | healthicons:joints-outline | A | Articulacao = local da rigidez |
-| Sintomas | Mancar | Claudicacao ao caminhar | healthicons:cane-outline | A | Bengala = apoio para claudicacao |
-| Sintomas | Dor após queda ou esforço | Trauma por queda/esforco | healthicons:traumatism-outline | A | Nome descreve exatamente trauma |
-| Sintomas | Exame com artrose ou bursite | Achado de exame | healthicons:xray-outline | A | Raio-x = achado de exame |
-| Sintomas | Dor para caminhar | Dor ao caminhar | healthicons:walking-outline | A | Pessoa caminhando = dor ao caminhar |
-| Causas | Artrose | Degeneracao articular | healthicons:joints-outline | A | Reuso aceito: mesmo conceito articular de "Rigidez" |
-| Causas | Bursite trocantérica | Inflamacao lateral do quadril | material-symbols:femur-outline | C | Sem icone literal de bursite trocanterica; femur = regiao anatomica do quadril, mesmo dominio |
-| Causas | Tendinopatias | Alteracao de tendao | healthicons:orthopaedics-outline | C | Sem icone literal de tendinopatia; ortopedia geral como fallback |
-| Causas | Sobrecarga muscular | Sobrecarga de esforco | healthicons:weights-outline | A | Halteres = sobrecarga |
-| Causas | Dor referida | Dor de origem nervosa/coluna | healthicons:nerve-outline | A | Nervo = mecanismo de dor referida |
-| Causas | Traumas | Trauma fisico | healthicons:traumatism-outline | A | Reuso aceito: mesmo conceito de trauma do sintoma "Dor apos queda ou esforco" |
-| Cuidados | Exame do quadril | Avaliacao/exame do quadril | material-symbols:femur-outline | A | Reuso aceito: femur = regiao anatomica avaliada |
-| Cuidados | Imagem com contexto | Exame de imagem | healthicons:xray-outline | A | Raio-x = exame de imagem |
-| Cuidados | Tratamento proporcional | Plano de tratamento | medical-icon:medical-records | A | Prontuario = plano |
-| Cuidados | Recursos para dor | Procedimento clinico | healthicons:syringe-outline | A | Seringa = procedimento |
+| Card | Arquivo | Ícone de origem |
+| --- | --- | --- |
+| Dor para caminhar | `quadril/dor-para-caminhar.svg` | `healthicons:walking-outline` |
+| Dor ao deitar de lado | `quadril/dor-ao-deitar-de-lado.svg` | `material-symbols:bed-outline` |
+| Rigidez | `quadril/rigidez.svg` | `healthicons:joints-outline` |
+| Mancar | `quadril/mancar.svg` | `healthicons:cane-outline` |
+| Dor após queda ou esforço | `quadril/dor-apos-queda-ou-esforco.svg` | `healthicons:traumatism-outline` |
+| Exame com artrose ou bursite | `quadril/exame-com-artrose-ou-bursite.svg` | `healthicons:xray-outline` |
+| Artrose | `quadril/artrose.svg` | `material-symbols:femur-outline` |
+| Bursite trocantérica | `quadril/bursite-trocanterica.svg` | `material-symbols:femur-alt-outline` |
+| Tendinopatias | `quadril/tendinopatias.svg` | `tabler:bandage` |
+| Sobrecarga muscular | `quadril/sobrecarga-muscular.svg` | `hugeicons:body-part-muscle` |
+| Dor referida | `quadril/dor-referida.svg` | `healthicons:nerve-outline` |
+| Traumas | `quadril/traumas.svg` | `material-symbols:personal-injury-outline` |
+| Exame do quadril | `quadril/exame-do-quadril.svg` | `healthicons:stethoscope-outline` |
+| Imagem com contexto | `quadril/imagem-com-contexto.svg` | `healthicons:radiology-outline` |
+| Tratamento proporcional | `quadril/tratamento-proporcional.svg` | `healthicons:medical-records-outline` |
+| Recursos para dor | `quadril/recursos-para-dor.svg` | `healthicons:syringe-outline` |
 
-## Mão e punho
+## mao-punho
 
-| Secao | Card | Conceito literal | Icone | Bucket | Justificativa |
-| --- | --- | --- | --- | --- | --- |
-| Sintomas | Dor ao digitar ou segurar objetos | Dor no punho | material-symbols:wrist-outline | A | Punho = regiao literal do sintoma |
-| Sintomas | Formigamento nos dedos | Alteracao de sensibilidade nervosa | healthicons:nerve-outline | A | Nervo = mecanismo do formigamento |
-| Sintomas | Perda de força | Fraqueza muscular | healthicons:weights-outline | A | Halteres = forca |
-| Sintomas | Dedo travando | Dedo em gatilho | material-symbols:front-hand-outline | C | Nao existe icone literal de "dedo em gatilho" em nenhum set indexado; mao/palma como fallback do mesmo dominio |
-| Sintomas | Cisto ou caroço no punho | Cisto/nodulo proximo a articulacao | healthicons:joints-outline | C | Sem icone literal de cisto; articulacao como fallback, cisto sinovial ocorre proximo a articulacoes |
-| Sintomas | Dor após queda | Trauma por queda | healthicons:traumatism-outline | A | Nome descreve exatamente trauma |
-| Causas | Tendinites e tenossinovites | Inflamacao de tendao do punho | material-symbols:wrist-outline | A | Reuso aceito: punho = regiao anatomica literal |
-| Causas | Compressões nervosas | Compressao nervosa (ex: tunel do carpo) | healthicons:nerve-outline | A | Reuso aceito: nervo = mecanismo literal, ligado diretamente ao sintoma de formigamento |
-| Causas | Artrose | Degeneracao articular | healthicons:joints-outline | A | Reuso aceito: mesmo conceito articular do sintoma de cisto |
-| Causas | Cistos sinoviais | Cisto sinovial | material-symbols:hand-bones-outline | C | Sem icone literal de cisto sinovial; ossos da mao como fallback anatomico, diferenciado do icone de "Cisto ou caroço" para nao repetir |
-| Causas | Fraturas e entorses | Fratura/entorse do antebraco | material-symbols:ulna-radius-outline | A | Ossos do antebraco = regiao literal da fratura |
-| Cuidados | Exame da mão e punho | Avaliacao da mao/punho | material-symbols:wrist-outline | A | Reuso aceito: punho = regiao avaliada |
-| Cuidados | Exames quando necessários | Exame de imagem | healthicons:xray-outline | A | Raio-x = exame de imagem |
-| Cuidados | Conduta individualizada | Plano de tratamento | medical-icon:medical-records | A | Prontuario = plano |
-| Cuidados | Procedimentos selecionados | Procedimento clinico | healthicons:syringe-outline | A | Seringa = procedimento |
+| Card | Arquivo | Ícone de origem |
+| --- | --- | --- |
+| Dor ao digitar ou segurar objetos | `mao-punho/dor-ao-digitar-ou-segurar-objetos.svg` | `material-symbols:wrist-outline` |
+| Formigamento nos dedos | `mao-punho/formigamento-nos-dedos.svg` | `healthicons:nerve-outline` |
+| Perda de força | `mao-punho/perda-de-forca.svg` | `material-symbols:front-hand-outline` |
+| Dedo travando | `mao-punho/dedo-travando.svg` | `tabler:hand-finger` |
+| Cisto ou caroço no punho | `mao-punho/cisto-ou-caroco-no-punho.svg` | `material-symbols:hand-bones-outline` |
+| Dor após queda | `mao-punho/dor-apos-queda.svg` | `healthicons:traumatism-outline` |
+| Tendinites e tenossinovites | `mao-punho/tendinites-e-tenossinovites.svg` | `tabler:bandage` |
+| Compressões nervosas | `mao-punho/compressoes-nervosas.svg` | `material-symbols:back-hand-outline` |
+| Dedo em gatilho | `mao-punho/dedo-em-gatilho.svg` | `mingcute:finger-tap-line` |
+| Artrose | `mao-punho/artrose.svg` | `healthicons:joints-outline` |
+| Cistos sinoviais | `mao-punho/cistos-sinoviais.svg` | `material-symbols:ulna-radius-outline` |
+| Fraturas e entorses | `mao-punho/fraturas-e-entorses.svg` | `lucide:bone-fracture` |
+| Exame da mão e punho | `mao-punho/exame-da-mao-e-punho.svg` | `healthicons:stethoscope-outline` |
+| Exames quando necessários | `mao-punho/exames-quando-necessarios.svg` | `healthicons:xray-outline` |
+| Conduta individualizada | `mao-punho/conduta-individualizada.svg` | `healthicons:medical-records-outline` |
+| Procedimentos selecionados | `mao-punho/procedimentos-selecionados.svg` | `healthicons:syringe-outline` |
 
-## Pé e tornozelo
+## pe-tornozelo
 
-| Secao | Card | Conceito literal | Icone | Bucket | Justificativa |
-| --- | --- | --- | --- | --- | --- |
-| Sintomas | Dor no calcanhar | Dor no pe | healthicons:foot-outline | A | Pe = regiao literal do sintoma |
-| Sintomas | Dor ao caminhar | Dor ao caminhar | healthicons:walking-outline | A | Pessoa caminhando = dor ao caminhar |
-| Sintomas | Entorses recorrentes | Entorse de tornozelo | material-symbols:foot-bones-outline | C | Sem icone literal de entorse; ossos do pe como fallback anatomico |
-| Sintomas | Inchaço | Inchaco/trauma no pe-tornozelo | healthicons:traumatism-outline | C | Sem icone literal de inchaco; marca de trauma representa lesao/inflamacao |
-| Sintomas | Dor em tendões | Dor em tendao da perna | healthicons:leg-outline | C | Sem icone literal de tendinite especifico; perna como fallback anatomico (tendoes do tornozelo percorrem a perna) |
-| Sintomas | Dificuldade com calçados | Desconforto com calcado | healthicons:orthotics-outline | A | Calcado ortopedico = literal ao conceito |
-| Causas | Fascite plantar | Dor no calcanhar por fascite | healthicons:foot-outline | A | Reuso aceito: fascite plantar causa diretamente a dor no calcanhar do sintoma |
-| Causas | Tendinites | Inflamacao de tendao | healthicons:leg-outline | C | Reuso aceito: mesmo fallback anatomico do sintoma "Dor em tendoes" |
-| Causas | Entorses e instabilidade | Instabilidade por entorse | material-symbols:foot-bones-outline | C | Reuso aceito: mesmo fallback anatomico do sintoma "Entorses recorrentes" |
-| Causas | Artrose e desgaste | Degeneracao articular | healthicons:joints-outline | A | Articulacao = local do desgaste |
-| Causas | Sobrecarga no esporte | Sobrecarga de esforco esportivo | healthicons:weights-outline | A | Halteres = sobrecarga |
-| Cuidados | Exame funcional | Avaliacao funcional | healthicons:stethoscope-outline | A | Estetoscopio = avaliacao clinica |
-| Cuidados | Exames de imagem | Exame de imagem | healthicons:xray-outline | A | Raio-x = exame de imagem |
-| Cuidados | Plano de retorno | Plano de tratamento | medical-icon:medical-records | A | Prontuario = plano |
-| Cuidados | Procedimentos quando indicados | Procedimento clinico | healthicons:syringe-outline | A | Seringa = procedimento |
+| Card | Arquivo | Ícone de origem |
+| --- | --- | --- |
+| Dor no calcanhar | `pe-tornozelo/dor-no-calcanhar.svg` | `healthicons:foot-outline` |
+| Dor ao caminhar | `pe-tornozelo/dor-ao-caminhar.svg` | `healthicons:walking-outline` |
+| Entorses recorrentes | `pe-tornozelo/entorses-recorrentes.svg` | `material-symbols:foot-bones-outline` |
+| Inchaço | `pe-tornozelo/inchaco.svg` | `tabler:bandage` |
+| Dor em tendões | `pe-tornozelo/dor-em-tendoes.svg` | `hugeicons:body-part-leg` |
+| Dificuldade com calçados | `pe-tornozelo/dificuldade-com-calcados.svg` | `tabler:shoe` |
+| Fascite plantar | `pe-tornozelo/fascite-plantar.svg` | `streamline-ultimate:medical-specialty-feet` |
+| Tendinites | `pe-tornozelo/tendinites.svg` | `healthicons:orthotics-outline` |
+| Entorses e instabilidade | `pe-tornozelo/entorses-e-instabilidade.svg` | `game-icons:falling` |
+| Artrose e desgaste | `pe-tornozelo/artrose-e-desgaste.svg` | `healthicons:joints-outline` |
+| Fraturas por trauma ou estresse | `pe-tornozelo/fraturas-por-trauma-ou-estresse.svg` | `lucide:bone-fracture` |
+| Sobrecarga no esporte | `pe-tornozelo/sobrecarga-no-esporte.svg` | `healthicons:running` |
+| Exame funcional | `pe-tornozelo/exame-funcional.svg` | `healthicons:stethoscope-outline` |
+| Exames de imagem | `pe-tornozelo/exames-de-imagem.svg` | `healthicons:xray-outline` |
+| Plano de retorno | `pe-tornozelo/plano-de-retorno.svg` | `healthicons:medical-records-outline` |
+| Procedimentos quando indicados | `pe-tornozelo/procedimentos-quando-indicados.svg` | `healthicons:syringe-outline` |
 
-## Observacao sobre reusos entre secoes
+## Nota sobre casos sem ícone literal
 
-Varios icones se repetem entre secoes diferentes da mesma pagina (ex: `hugeicons:shoulder` em "Dificuldade para elevar o braco" e "Manguito rotador", `healthicons:traumatism-outline` em multiplos sintomas de trauma). Isso e intencional e documentado nesta tabela: nos casos aceitos, os dois cards descrevem literalmente o mesmo conceito clinico ou anatomico (ex: rigidez do ombro e capsulite adesiva sao a mesma condicao), nao uma reutilizacao aleatoria. O verificador automatico (`check-icon-domains.py`) reporta esses casos como aviso, nao como erro — o erro que ele bloqueia de fato e um icone de dominio clinico errado (ex: cardiologia numa pagina de ortopedia).
+Confirmado por busca em toda a base do Iconify (215 sets): não existe ícone para *menisco*, *cisto*, *bursite*, *entorse*, *tornozelo* nem *quadril* como desenho próprio. Nesses cards foi usado o ícone anatômico mais próximo **da mesma região** (ex.: fêmur no quadril, ossos do pé no tornozelo), nunca um ícone de outra especialidade.
