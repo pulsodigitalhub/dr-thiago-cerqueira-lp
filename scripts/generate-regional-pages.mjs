@@ -65,7 +65,7 @@ const convenios = [
 const topicIconOverrides = {
   coluna: {
     "Dor lombar persistente": "healthicons:back-pain-outline",
-    "Travamento nas costas": "healthicons:spine-outline",
+    "Travamento nas costas": "healthicons:crutches-outline",
     "Dor descendo para a perna": "healthicons:nerve-outline",
     "Formigamento ou dormência": "material-symbols:front-hand-outline",
     "Dor cervical": "healthicons:pain-outline",
@@ -74,7 +74,7 @@ const topicIconOverrides = {
     "Alterações de disco": "healthicons:spine-outline",
     "Articulações da coluna": "healthicons:joints-outline",
     "Irritação nervosa": "healthicons:nerve-outline",
-    "Crises recorrentes": "material-symbols:pulse-alert-outline",
+    "Crises recorrentes": "composto:coluna-alerta",
     "Sinais de alerta": "healthicons:traumatism-outline",
     "Exame clínico direcionado": "healthicons:stethoscope-outline",
     "Leitura dos exames": "healthicons:skeleton-outline",
@@ -103,7 +103,7 @@ const topicIconOverrides = {
 
   ombro: {
     "Dificuldade para elevar o braço": "hugeicons:shoulder",
-    "Dor à noite": "healthicons:pain-outline",
+    "Dor à noite": "composto:ombro-noite",
     "Perda de força": "healthicons:weights-outline",
     "Ombro rígido": "healthicons:sling-outline",
     "Dor após queda": "healthicons:traumatism-outline",
