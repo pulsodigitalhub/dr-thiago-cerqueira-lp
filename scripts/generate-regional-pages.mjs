@@ -40,7 +40,6 @@ const convenios = [
   "PLAS/JMU (STM)",
   "PMDF - CONSULTAS MÉDICAS",
   "PMDF - SAÚDE MENTAL E TERAPIAS",
-  "POSTAL SAÚDE (ECT) - (SUSPENSO)",
   "PROASA",
   "PRÓ-SAÚDE (CÂMARA DOS DEPUTADOS)",
   "PRÓ-SAÚDE (TJDFT)",
@@ -60,106 +59,123 @@ const convenios = [
   "UNAFISCO SAÚDE (PREMIUM)",
 ];
 
+// Icone por card, escolhido com revisao VISUAL (contact sheet), nao por nome.
+// Pasta por regiao: card da pagina X so usa icone de assets/topic-icons/X/.
 const topicIconOverrides = {
-  // Coluna
-  "Dor lombar persistente": "healthicons:back-pain-outline",
-  "Travamento nas costas": "healthicons:spine-outline",
-  "Dor descendo para a perna": "healthicons:nerve-outline",
-  "Formigamento ou dormência": "healthicons:nerve-outline",
-  "Dor cervical": "healthicons:spine-outline",
-  "Exame que gerou dúvida": "healthicons:xray-outline",
-  "Sobrecarga muscular": "healthicons:weights-outline",
-  "Alterações de disco": "healthicons:spine-outline",
-  "Articulações da coluna": "healthicons:joints-outline",
-  "Irritação nervosa": "healthicons:nerve-outline",
-  "Crises recorrentes": "healthicons:back-pain-outline",
-  "Sinais de alerta": "healthicons:pain-outline",
-  "Exame clínico direcionado": "healthicons:stethoscope-outline",
-  "Leitura dos exames": "healthicons:xray-outline",
-  "Plano individual": "medical-icon:medical-records",
-  "Procedimentos quando indicados": "healthicons:syringe-outline",
+  coluna: {
+    "Dor lombar persistente": "coluna/dor-lombar-persistente.svg",
+    "Travamento nas costas": "coluna/travamento-nas-costas.svg",
+    "Dor descendo para a perna": "coluna/dor-descendo-para-a-perna.svg",
+    "Formigamento ou dormência": "coluna/formigamento-ou-dormencia.svg",
+    "Dor cervical": "coluna/dor-cervical.svg",
+    "Exame que gerou dúvida": "coluna/exame-que-gerou-duvida.svg",
+    "Sobrecarga muscular": "coluna/sobrecarga-muscular.svg",
+    "Alterações de disco": "coluna/alteracoes-de-disco.svg",
+    "Articulações da coluna": "coluna/articulacoes-da-coluna.svg",
+    "Irritação nervosa": "coluna/irritacao-nervosa.svg",
+    "Crises recorrentes": "coluna/crises-recorrentes.svg",
+    "Sinais de alerta": "coluna/sinais-de-alerta.svg",
+    "Exame clínico direcionado": "coluna/exame-clinico-direcionado.svg",
+    "Leitura dos exames": "coluna/leitura-dos-exames.svg",
+    "Plano individual": "coluna/plano-individual.svg",
+    "Procedimentos quando indicados": "coluna/procedimentos-quando-indicados.svg",
+  },
 
-  // Joelho
-  "Dor ao subir escadas": "healthicons:walking-outline",
-  "Inchaço no joelho": "healthicons:joints-outline",
-  "Estalos e crepitação": "healthicons:joints-outline",
-  "Falseio ou instabilidade": "healthicons:joints-outline",
-  "Travamento": "healthicons:joints-outline",
-  "Dor para caminhar": "healthicons:walking-outline",
-  "Artrose e desgaste": "healthicons:joints-outline",
-  "Lesões de menisco": "healthicons:joints-outline",
-  "Lesões ligamentares": "healthicons:joints-outline",
-  "Sobrecarga no treino": "healthicons:weights-outline",
-  "Bursites e tendinites": "healthicons:joints-outline",
-  "Alterações no exame": "healthicons:xray-outline",
-  "Avaliação do joelho": "healthicons:joints-outline",
-  "Conduta sem pressa": "medical-icon:medical-records",
-  "Infiltrações e viscossuplementação": "healthicons:syringe-outline",
-  "Retorno às atividades": "healthicons:walking-outline",
+  joelho: {
+    "Dor ao subir escadas": "joelho/dor-ao-subir-escadas.svg",
+    "Inchaço no joelho": "joelho/inchaco-no-joelho.svg",
+    "Estalos e crepitação": "joelho/estalos-e-crepitacao.svg",
+    "Falseio ou instabilidade": "joelho/falseio-ou-instabilidade.svg",
+    "Travamento": "joelho/travamento.svg",
+    "Dor para caminhar": "joelho/dor-para-caminhar.svg",
+    "Artrose e desgaste": "joelho/artrose-e-desgaste.svg",
+    "Lesões de menisco": "joelho/lesoes-de-menisco.svg",
+    "Lesões ligamentares": "joelho/lesoes-ligamentares.svg",
+    "Sobrecarga no treino": "joelho/sobrecarga-no-treino.svg",
+    "Bursites e tendinites": "joelho/bursites-e-tendinites.svg",
+    "Alterações no exame": "joelho/alteracoes-no-exame.svg",
+    "Avaliação do joelho": "joelho/avaliacao-do-joelho.svg",
+    "Conduta sem pressa": "joelho/conduta-sem-pressa.svg",
+    "Infiltrações e viscossuplementação": "joelho/infiltracoes-e-viscossuplementacao.svg",
+    "Retorno às atividades": "joelho/retorno-as-atividades.svg",
+  },
 
-  // Ombro
-  "Dificuldade para elevar o braço": "hugeicons:shoulder",
-  "Dor à noite": "healthicons:pain-outline",
-  "Perda de força": "healthicons:weights-outline",
-  "Ombro rígido": "hugeicons:shoulder",
-  "Dor após queda": "healthicons:pain-outline",
-  "Laudo com tendinite ou bursite": "healthicons:xray-outline",
-  "Tendinopatias": "hugeicons:shoulder",
-  "Bursite": "hugeicons:shoulder",
-  "Manguito rotador": "hugeicons:shoulder",
-  "Capsulite adesiva": "hugeicons:shoulder",
-  "Sobrecarga repetitiva": "healthicons:weights-outline",
-  "Dor irradiada": "healthicons:nerve-outline",
-  "Testes do ombro": "healthicons:stethoscope-outline",
-  "Análise de imagem": "healthicons:xray-outline",
-  "Plano de recuperação": "medical-icon:medical-records",
+  ombro: {
+    "Dificuldade para elevar o braço": "ombro/dificuldade-para-elevar-o-braco.svg",
+    "Dor à noite": "ombro/dor-a-noite.svg",
+    "Perda de força": "ombro/perda-de-forca.svg",
+    "Ombro rígido": "ombro/ombro-rigido.svg",
+    "Dor após queda": "ombro/dor-apos-queda.svg",
+    "Laudo com tendinite ou bursite": "ombro/laudo-com-tendinite-ou-bursite.svg",
+    "Tendinopatias": "ombro/tendinopatias.svg",
+    "Bursite": "ombro/bursite.svg",
+    "Manguito rotador": "ombro/manguito-rotador.svg",
+    "Capsulite adesiva": "ombro/capsulite-adesiva.svg",
+    "Sobrecarga repetitiva": "ombro/sobrecarga-repetitiva.svg",
+    "Dor irradiada": "ombro/dor-irradiada.svg",
+    "Testes do ombro": "ombro/testes-do-ombro.svg",
+    "Análise de imagem": "ombro/analise-de-imagem.svg",
+    "Plano de recuperação": "ombro/plano-de-recuperacao.svg",
+    "Procedimentos quando indicados": "ombro/procedimentos-quando-indicados.svg",
+  },
 
-  // Quadril
-  "Dor ao deitar de lado": "healthicons:pain-outline",
-  "Rigidez": "healthicons:joints-outline",
-  "Mancar": "healthicons:walking-outline",
-  "Dor após queda ou esforço": "healthicons:pain-outline",
-  "Exame com artrose ou bursite": "healthicons:xray-outline",
-  "Artrose": "healthicons:joints-outline",
-  "Bursite trocantérica": "material-symbols:femur-outline",
-  "Tendinopatias": "material-symbols:femur-outline",
-  "Dor referida": "healthicons:nerve-outline",
-  "Traumas": "healthicons:pain-outline",
-  "Exame do quadril": "material-symbols:femur-outline",
-  "Imagem com contexto": "healthicons:xray-outline",
-  "Tratamento proporcional": "medical-icon:medical-records",
-  "Recursos para dor": "healthicons:syringe-outline",
+  quadril: {
+    "Dor para caminhar": "quadril/dor-para-caminhar.svg",
+    "Dor ao deitar de lado": "quadril/dor-ao-deitar-de-lado.svg",
+    "Rigidez": "quadril/rigidez.svg",
+    "Mancar": "quadril/mancar.svg",
+    "Dor após queda ou esforço": "quadril/dor-apos-queda-ou-esforco.svg",
+    "Exame com artrose ou bursite": "quadril/exame-com-artrose-ou-bursite.svg",
+    "Artrose": "quadril/artrose.svg",
+    "Bursite trocantérica": "quadril/bursite-trocanterica.svg",
+    "Tendinopatias": "quadril/tendinopatias.svg",
+    "Sobrecarga muscular": "quadril/sobrecarga-muscular.svg",
+    "Dor referida": "quadril/dor-referida.svg",
+    "Traumas": "quadril/traumas.svg",
+    "Exame do quadril": "quadril/exame-do-quadril.svg",
+    "Imagem com contexto": "quadril/imagem-com-contexto.svg",
+    "Tratamento proporcional": "quadril/tratamento-proporcional.svg",
+    "Recursos para dor": "quadril/recursos-para-dor.svg",
+  },
 
-  // Mão e punho
-  "Dor ao digitar ou segurar objetos": "material-symbols:wrist-outline",
-  "Formigamento nos dedos": "healthicons:nerve-outline",
-  "Dedo travando": "material-symbols:wrist-outline",
-  "Cisto ou caroço no punho": "healthicons:joints-outline",
-  "Tendinites e tenossinovites": "material-symbols:wrist-outline",
-  "Compressões nervosas": "healthicons:nerve-outline",
-  "Dedo em gatilho": "material-symbols:wrist-outline",
-  "Cistos sinoviais": "healthicons:joints-outline",
-  "Fraturas e entorses": "material-symbols:ulna-radius-outline",
-  "Exame da mão e punho": "material-symbols:wrist-outline",
-  "Exames quando necessários": "healthicons:xray-outline",
-  "Conduta individualizada": "medical-icon:medical-records",
-  "Procedimentos selecionados": "healthicons:syringe-outline",
+  "mao-punho": {
+    "Dor ao digitar ou segurar objetos": "mao-punho/dor-ao-digitar-ou-segurar-objetos.svg",
+    "Formigamento nos dedos": "mao-punho/formigamento-nos-dedos.svg",
+    "Perda de força": "mao-punho/perda-de-forca.svg",
+    "Dedo travando": "mao-punho/dedo-travando.svg",
+    "Cisto ou caroço no punho": "mao-punho/cisto-ou-caroco-no-punho.svg",
+    "Dor após queda": "mao-punho/dor-apos-queda.svg",
+    "Tendinites e tenossinovites": "mao-punho/tendinites-e-tenossinovites.svg",
+    "Compressões nervosas": "mao-punho/compressoes-nervosas.svg",
+    "Dedo em gatilho": "mao-punho/dedo-em-gatilho.svg",
+    "Artrose": "mao-punho/artrose.svg",
+    "Cistos sinoviais": "mao-punho/cistos-sinoviais.svg",
+    "Fraturas e entorses": "mao-punho/fraturas-e-entorses.svg",
+    "Exame da mão e punho": "mao-punho/exame-da-mao-e-punho.svg",
+    "Exames quando necessários": "mao-punho/exames-quando-necessarios.svg",
+    "Conduta individualizada": "mao-punho/conduta-individualizada.svg",
+    "Procedimentos selecionados": "mao-punho/procedimentos-selecionados.svg",
+  },
 
-  // Pé e tornozelo
-  "Dor no calcanhar": "healthicons:foot-outline",
-  "Dor ao caminhar": "healthicons:walking-outline",
-  "Entorses recorrentes": "material-symbols:foot-bones-outline",
-  "Inchaço": "healthicons:foot-outline",
-  "Dor em tendões": "healthicons:foot-outline",
-  "Dificuldade com calçados": "healthicons:orthotics-outline",
-  "Fascite plantar": "healthicons:foot-outline",
-  "Tendinites": "healthicons:foot-outline",
-  "Entorses e instabilidade": "material-symbols:foot-bones-outline",
-  "Fraturas por trauma ou estresse": "material-symbols:foot-bones-outline",
-  "Sobrecarga no esporte": "healthicons:weights-outline",
-  "Exame funcional": "healthicons:stethoscope-outline",
-  "Exames de imagem": "healthicons:xray-outline",
-  "Plano de retorno": "medical-icon:medical-records",
+  "pe-tornozelo": {
+    "Dor no calcanhar": "pe-tornozelo/dor-no-calcanhar.svg",
+    "Dor ao caminhar": "pe-tornozelo/dor-ao-caminhar.svg",
+    "Entorses recorrentes": "pe-tornozelo/entorses-recorrentes.svg",
+    "Inchaço": "pe-tornozelo/inchaco.svg",
+    "Dor em tendões": "pe-tornozelo/dor-em-tendoes.svg",
+    "Dificuldade com calçados": "pe-tornozelo/dificuldade-com-calcados.svg",
+    "Fascite plantar": "pe-tornozelo/fascite-plantar.svg",
+    "Tendinites": "pe-tornozelo/tendinites.svg",
+    "Entorses e instabilidade": "pe-tornozelo/entorses-e-instabilidade.svg",
+    "Artrose e desgaste": "pe-tornozelo/artrose-e-desgaste.svg",
+    "Fraturas por trauma ou estresse": "pe-tornozelo/fraturas-por-trauma-ou-estresse.svg",
+    "Sobrecarga no esporte": "pe-tornozelo/sobrecarga-no-esporte.svg",
+    "Exame funcional": "pe-tornozelo/exame-funcional.svg",
+    "Exames de imagem": "pe-tornozelo/exames-de-imagem.svg",
+    "Plano de retorno": "pe-tornozelo/plano-de-retorno.svg",
+    "Procedimentos quando indicados": "pe-tornozelo/procedimentos-quando-indicados.svg",
+  },
+
 };
 
 const pages = [
@@ -417,8 +433,12 @@ function topicIconFileName(icon) {
   return `${icon.replaceAll(":", "-")}.svg`;
 }
 
-function topicIconMarkup(icon, title) {
-  const resolvedIcon = topicIconOverrides[title] || icon;
+function topicIconMarkup(icon, title, pageSlug) {
+  const resolvedIcon = topicIconOverrides[pageSlug]?.[title] || icon;
+
+  if (resolvedIcon.endsWith(".svg")) {
+    return `<img class="topic-icon" src="../assets/topic-icons/${escapeHtml(resolvedIcon)}" alt="" aria-hidden="true" loading="lazy">`;
+  }
 
   if (resolvedIcon.includes(":")) {
     return `<img class="topic-icon" src="../assets/topic-icons/${escapeHtml(topicIconFileName(resolvedIcon))}" alt="" aria-hidden="true" loading="lazy">`;
@@ -427,10 +447,10 @@ function topicIconMarkup(icon, title) {
   return `<i data-lucide="${escapeHtml(resolvedIcon)}" aria-hidden="true"></i>`;
 }
 
-function cardMarkup(items) {
+function cardMarkup(items, pageSlug) {
   return items.map(([icon, title, text]) => `
             <article>
-              ${topicIconMarkup(icon, title)}
+              ${topicIconMarkup(icon, title, pageSlug)}
               <h3>${escapeHtml(title)}</h3>
               <p>${escapeHtml(text)}</p>
             </article>`).join("");
@@ -651,7 +671,7 @@ ${processIconSprite}
           <p>Quando a dor começa a limitar movimentos, sono ou atividades simples, vale investigar a causa antes que o problema se arraste.</p>
         </div>
         <div class="container regional-card-grid">
-${cardMarkup(page.symptoms)}
+${cardMarkup(page.symptoms, page.slug)}
         </div>
       </section>
 
@@ -666,7 +686,7 @@ ${cardMarkup(page.symptoms)}
           </div>
         </div>
         <div class="container regional-card-grid regional-card-grid-compact">
-${cardMarkup(page.causes)}
+${cardMarkup(page.causes, page.slug)}
         </div>
       </section>
 
@@ -677,7 +697,7 @@ ${cardMarkup(page.causes)}
           <p>O objetivo é definir um caminho coerente para o seu caso: controlar a dor, recuperar função e evitar decisões apressadas.</p>
         </div>
         <div class="container regional-care-grid">
-${cardMarkup(page.care)}
+${cardMarkup(page.care, page.slug)}
         </div>
         <div class="container treatment-note regional-note">
           <i data-lucide="info" aria-hidden="true"></i>
