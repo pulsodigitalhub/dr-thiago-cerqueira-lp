@@ -1,5 +1,8 @@
 screenshots/
 tmp-previews/
+.env
+.env.*
+!.env.example
 lp-dr-thiago-agendamento-2026-05/
 lp-dr-thiago-agendamento-2026-05.zip
 preview-*.png
