@@ -1,0 +1,5 @@
+{
+  "url_ao_vivo": "https://www.drthiagotratamentodador.com.br/",
+  "dominios_terceiros_permitidos": ["unpkg.com"],
+  "_motivo_unpkg": "Icones Lucide carregados de unpkg.com com versao fixa (1.46.0). Nunca usar @latest: qualquer versao nova do pacote passaria a rodar no site sem revisao."
+}
