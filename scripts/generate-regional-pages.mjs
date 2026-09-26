@@ -848,7 +848,7 @@ ${leadModal(page)}
       </div>
     </footer>
 
-    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+    <script src="https://unpkg.com/lucide@1.46.0/dist/umd/lucide.min.js"></script>
     <script src="../script.js?v=20260713-regioes-1"></script>
   </body>
 </html>
